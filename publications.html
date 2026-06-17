@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Publications — PANDORA Economics</title>
+<meta name="description" content="Toutes les Analyses Flash de PANDORA Economics, filtrables par thème et par date." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@400;500;600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#14123A; --primary:#211C6B; --primary-2:#322a93; --violet:#5A3DC0; --iris:#8B6FE0;
+    --paper:#FFFFFF; --panel:#F4F3FA; --panel-2:#ECEAF6; --muted:#6A6588; --line:rgba(20,18,58,.13); --line-dk:rgba(255,255,255,.18);
+    --serif:"Spectral",Georgia,serif; --sans:"Inter",system-ui,sans-serif; --mono:"IBM Plex Mono",monospace;
+    --maxw:1180px; --gutter:clamp(20px,5vw,56px);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter);}
+  .eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--violet);}
+
+  .util{background:var(--primary);color:#fff;font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;}
+  .util-in{display:flex;justify-content:space-between;align-items:center;padding:8px 0;}
+  .util .lang button{background:none;border:0;color:rgba(255,255,255,.75);font-family:var(--mono);font-size:11.5px;cursor:pointer;padding:0 4px;letter-spacing:.08em;}
+  .util .lang button[aria-pressed="true"]{color:#fff;text-decoration:underline;text-underline-offset:3px;}
+  @media (max-width:620px){ .util .tagline{display:none;} }
+
+  header.mh{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  .mh-in{display:flex;align-items:center;justify-content:space-between;padding:18px 0;gap:18px;}
+  .brand{display:flex;align-items:center;gap:13px;}
+  .brand .logo{width:38px;height:38px;flex:none;}
+  .brand .txt{display:flex;flex-direction:column;line-height:1.05;}
+  .brand .nm{font-family:var(--serif);font-weight:600;font-size:20px;letter-spacing:.01em;}
+  .brand .tg{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:3px;}
+  .nav{display:flex;align-items:center;gap:34px;}
+  .nav a{font-size:15px;font-weight:500;color:var(--ink);position:relative;padding:6px 0;}
+  .nav a.active{color:var(--violet);}
+  .nav a:hover{color:var(--violet);}
+  .nav a.active::after{content:"";position:absolute;left:0;right:0;bottom:-19px;height:2px;background:var(--violet);}
+  .menu-btn{display:none;border:0;background:none;cursor:pointer;font-family:var(--mono);font-size:12px;letter-spacing:.1em;}
+  @media (max-width:780px){ .nav{display:none;} .nav.show{display:flex;position:absolute;top:100%;right:var(--gutter);flex-direction:column;gap:16px;background:#fff;padding:20px 24px;border:1px solid var(--line);box-shadow:0 24px 50px -30px rgba(20,18,58,.4);} .nav.show a.active::after{display:none;} .menu-btn{display:block;} }
+
+  .phead{border-bottom:1px solid var(--line);padding:clamp(46px,6vw,80px) 0 clamp(28px,3.5vw,40px);}
+  .phead h1{font-family:var(--serif);font-weight:600;font-size:clamp(34px,4.8vw,56px);line-height:1.06;letter-spacing:-.01em;margin:14px 0 0;}
+  .phead p{margin:16px 0 0;color:var(--muted);max-width:56ch;font-size:17px;}
+
+  .toolbar{position:sticky;top:60px;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:30;}
+  .toolbar-in{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;padding:16px 0;}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;}
+  .chip{font-family:var(--sans);font-weight:500;font-size:13.5px;border:1px solid var(--line);background:#fff;color:var(--muted);padding:8px 15px;border-radius:4px;cursor:pointer;transition:.16s;}
+  .chip:hover{border-color:var(--violet);color:var(--ink);}
+  .chip.active{background:var(--primary);border-color:var(--primary);color:#fff;}
+  .sort{display:flex;align-items:center;gap:9px;font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.04em;}
+  .sort button{border:1px solid var(--line);background:#fff;cursor:pointer;font-family:var(--mono);font-size:12px;color:var(--violet);letter-spacing:.04em;display:flex;align-items:center;gap:7px;padding:8px 13px;border-radius:4px;}
+  .sort button .ar{transition:transform .3s;}
+  .sort.asc button .ar{transform:rotate(180deg);}
+
+  .list{margin:6px 0 0;}
+  .row{display:grid;grid-template-columns:128px 1fr 168px;gap:24px;align-items:baseline;padding:26px 14px;margin:0 -14px;border-bottom:1px solid var(--line);border-radius:4px;transition:background .18s;}
+  .row:hover{background:var(--panel);}
+  .row .meta{font-family:var(--mono);font-size:12px;font-weight:500;color:var(--violet);letter-spacing:.03em;}
+  .row .meta .dt{color:var(--muted);display:block;margin-top:5px;}
+  .row h3{font-family:var(--serif);font-weight:600;font-size:clamp(19px,2.3vw,24px);line-height:1.2;margin:0;letter-spacing:-.005em;}
+  .row p{margin:8px 0 0;color:var(--muted);font-size:14.5px;max-width:62ch;}
+  .row .tag{justify-self:end;align-self:start;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--violet);border:1px solid var(--line);border-radius:3px;padding:6px 11px;white-space:nowrap;}
+  .row.hide{display:none;}
+  @media (max-width:720px){ .row{grid-template-columns:1fr;gap:8px;} .row .tag{justify-self:start;} .toolbar{position:static;} }
+  .empty{padding:60px 0;text-align:center;color:var(--muted);font-family:var(--mono);font-size:13px;display:none;}
+
+  footer{background:var(--primary);color:#fff;margin-top:40px;}
+  .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px;padding:56px 0 44px;}
+  @media (max-width:780px){ .foot-top{grid-template-columns:1fr 1fr;gap:30px;} }
+  .foot-col h4{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--iris);margin:0 0 16px;}
+  .foot-col a{display:block;color:rgba(255,255,255,.78);font-size:14.5px;padding:6px 0;}
+  .foot-col a:hover{color:#fff;}
+  .foot-brand .nm{font-family:var(--serif);font-weight:600;font-size:20px;}
+  .foot-brand p{color:rgba(255,255,255,.6);font-size:14px;max-width:30ch;margin:14px 0 0;}
+  .foot-bot{border-top:1px solid var(--line-dk);padding:20px 0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;font-family:var(--mono);font-size:11.5px;color:rgba(255,255,255,.55);letter-spacing:.04em;}
+  @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto;} }
+</style>
+</head>
+<body>
+
+<div class="util">
+  <div class="wrap util-in">
+    <span class="tagline">Publication indépendante d'analyse économique</span>
+    <span class="lang" role="group" aria-label="Langue"><button data-lang="fr" aria-pressed="true">FR</button>·<button data-lang="en" aria-pressed="false">EN</button></span>
+  </div>
+</div>
+
+<header class="mh">
+  <div class="wrap mh-in">
+    <a class="brand" href="index.html"><img class="brand-logo" src="logo-pandora.svg" alt="PANDORA Economics" style="height:40px;width:auto;display:block" /></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu">MENU</button>
+    <nav class="nav" id="nav">
+      <a href="index.html">Accueil</a>
+      <a href="publications.html" class="active">Publications</a>
+      <a href="auteur.html">Auteur</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="phead">
+    <div class="wrap">
+      <span class="eyebrow">Archives</span>
+      <h1>Toutes les publications</h1>
+      <p>L'ensemble des Analyses Flash, filtrables par thème et triables par date de parution.</p>
+    </div>
+  </section>
+
+  <div class="toolbar">
+    <div class="wrap toolbar-in">
+      <div class="chips" id="chips">
+        <button class="chip active" data-f="all">Tous les thèmes</button>
+        <button class="chip" data-f="Politique monétaire">Politique monétaire</button>
+        <button class="chip" data-f="Marchés &amp; taux">Marchés &amp; taux</button>
+        <button class="chip" data-f="Macroéconomie">Macroéconomie</button>
+        <button class="chip" data-f="France">France</button>
+      </div>
+      <div class="sort" id="sort"><span>Trier par date</span><button id="sortBtn">Plus récentes <span class="ar">↓</span></button></div>
+    </div>
+  </div>
+
+  <section class="wrap">
+    <div class="list" id="list">
+      <a class="row" href="#" data-theme="Politique monétaire" data-date="2026-06-12"><span class="meta">N°07<span class="dt">12 JUIN 2026</span></span><span><h3>BCE : la pause prolongée, et après ?</h3><p>La trajectoire des taux dépend désormais davantage de l'inflation des services que du prix de l'énergie.</p></span><span class="tag">Politique monétaire</span></a>
+      <a class="row" href="#" data-theme="France" data-date="2026-05-28"><span class="meta">N°06<span class="dt">28 MAI 2026</span></span><span><h3>Crédit immobilier : le tournant des taux</h3><p>Ce que la détente du coût du crédit change réellement pour le pouvoir d'achat immobilier des ménages.</p></span><span class="tag">France</span></a>
+      <a class="row" href="#" data-theme="Macroéconomie" data-date="2026-05-14"><span class="meta">N°05<span class="dt">14 MAI 2026</span></span><span><h3>Inflation de services : le dernier kilomètre</h3><p>La part la plus rigide de l'inflation, et pourquoi elle décide du calendrier des banques centrales.</p></span><span class="tag">Macroéconomie</span></a>
+      <a class="row" href="#" data-theme="Marchés &amp; taux" data-date="2026-04-30"><span class="meta">N°04<span class="dt">30 AVR 2026</span></span><span><h3>Dette souveraine : la prime française</h3><p>Lecture de l'écart de taux entre la France et l'Allemagne, et de ce qu'il dit du risque politique.</p></span><span class="tag">Marchés &amp; taux</span></a>
+      <a class="row" href="#" data-theme="Politique monétaire" data-date="2026-04-16"><span class="meta">N°03<span class="dt">16 AVR 2026</span></span><span><h3>Fed : le pivot qui se fait attendre</h3><p>Pourquoi le calendrier américain pèse sur les anticipations de taux en zone euro.</p></span><span class="tag">Politique monétaire</span></a>
+      <a class="row" href="#" data-theme="Macroéconomie" data-date="2026-04-02"><span class="meta">N°02<span class="dt">02 AVR 2026</span></span><span><h3>Énergie : la facture qui reflue</h3><p>L'effet de base énergétique et son impact mécanique sur l'indice des prix à la consommation.</p></span><span class="tag">Macroéconomie</span></a>
+      <a class="row" href="#" data-theme="Marchés &amp; taux" data-date="2026-03-19"><span class="meta">N°01<span class="dt">19 MARS 2026</span></span><span><h3>OAT-Bund : lire l'écart de taux</h3><p>Ce que le spread entre dette française et allemande dit du risque perçu sur la signature française.</p></span><span class="tag">Marchés &amp; taux</span></a>
+      <a class="row" href="#" data-theme="France" data-date="2026-03-05"><span class="meta">N°00<span class="dt">05 MARS 2026</span></span><span><h3>Pouvoir d'achat : l'illusion nominale</h3><p>Distinguer la hausse des salaires affichée de l'évolution réelle du revenu disponible.</p></span><span class="tag">France</span></a>
+    </div>
+    <div class="empty" id="empty">Aucune publication pour ce thème.</div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-top">
+    <div class="foot-col foot-brand"><div class="nm">PANDORA Economics</div><p>Analyse économique indépendante. Macroéconomie, marchés et politiques monétaires.</p></div>
+    <div class="foot-col"><h4>Naviguer</h4><a href="index.html">Accueil</a><a href="publications.html">Publications</a><a href="auteur.html">Auteur</a></div>
+    <div class="foot-col"><h4>Thèmes</h4><a href="publications.html">Politique monétaire</a><a href="publications.html">Marchés &amp; taux</a><a href="publications.html">Macroéconomie</a><a href="publications.html">France</a></div>
+    <div class="foot-col"><h4>Contact</h4><a href="mailto:pandora.economics@outlook.com">Email</a><a href="#">LinkedIn</a><a href="#">X / Twitter</a></div>
+  </div>
+  <div class="wrap foot-bot"><span>© <span id="year"></span> PANDORA Economics — Lenel Nivose · Tous droits réservés</span><span><a href="mentions-legales.html" style="text-decoration:underline;text-underline-offset:2px">Mentions légales</a> · <a href="confidentialite.html" style="text-decoration:underline;text-underline-offset:2px">Confidentialité</a></span></div>
+</footer>
+
+<script src="publications.js"></script>
+<script>
+  document.getElementById('year').textContent=new Date().getFullYear();
+  document.getElementById('menuBtn').addEventListener('click',function(){document.getElementById('nav').classList.toggle('show');});
+  document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.lang button').forEach(function(x){x.setAttribute('aria-pressed',x===b);});});});
+
+  var list=document.getElementById('list');
+  if(window.PUBLICATIONS){ list.innerHTML=window.pubsSorted().map(function(p){ return '<a class="row" href="article.html?n='+p.num+'" data-theme="'+p.theme+'" data-date="'+p.date+'">'+'<span class="meta">N°'+p.num+'<span class="dt">'+frDate(p.date,true)+'</span></span>'+'<span><h3>'+p.titre+'</h3><p>'+p.resume+'</p></span>'+'<span class="tag">'+p.theme+'</span></a>'; }).join(''); }
+  function rows(){return Array.prototype.slice.call(list.querySelectorAll('.row'));}
+  var filter='all', desc=true;
+  function apply(){var v=0;rows().forEach(function(r){var ok=filter==='all'||r.getAttribute('data-theme')===filter;r.classList.toggle('hide',!ok);if(ok)v++;});document.getElementById('empty').style.display=v?'none':'block';}
+  function sortRows(){rows().sort(function(a,b){var da=a.getAttribute('data-date'),db=b.getAttribute('data-date');return desc?db.localeCompare(da):da.localeCompare(db);}).forEach(function(r){list.appendChild(r);});}
+  document.getElementById('chips').addEventListener('click',function(e){var c=e.target.closest('.chip');if(!c)return;document.querySelectorAll('.chip').forEach(function(x){x.classList.remove('active');});c.classList.add('active');filter=c.getAttribute('data-f');apply();});
+  var sortBtn=document.getElementById('sortBtn');
+  sortBtn.addEventListener('click',function(){desc=!desc;document.getElementById('sort').classList.toggle('asc',!desc);sortBtn.firstChild.textContent=desc?'Plus récentes ':'Plus anciennes ';sortRows();});
+  (function(){ var qp=new URLSearchParams(location.search).get('theme');
+    if(qp){ var cs=Array.prototype.slice.call(document.querySelectorAll('.chip'));
+      var m=cs.filter(function(c){return c.getAttribute('data-f')===qp;})[0];
+      if(m){ cs.forEach(function(x){x.classList.remove('active');}); m.classList.add('active'); filter=qp; } } })();
+  sortRows();apply();
+</script>
+</body>
+</html>
