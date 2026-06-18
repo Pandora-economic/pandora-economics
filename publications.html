@@ -5,9 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Publications — PANDORA Economics</title>
 <meta name="description" content="Toutes les Analyses Flash de PANDORA Economics, filtrables par thème et par date." />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@400;500;600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="fonts.css" />
 <style>
   :root{
     --ink:#14123A; --primary:#211C6B; --primary-2:#322a93; --violet:#5A3DC0; --iris:#8B6FE0;
@@ -84,44 +82,29 @@
 </head>
 <body>
 
-<div class="util">
-  <div class="wrap util-in">
-    <span class="tagline">Publication indépendante d'analyse économique</span>
-    <span class="lang" role="group" aria-label="Langue"><button data-lang="fr" aria-pressed="true">FR</button>·<button data-lang="en" aria-pressed="false">EN</button></span>
-  </div>
-</div>
+<div class="util"><div class="wrap util-in"><span class="tagline" data-i18n="tagline">Publication indépendante d'analyse économique</span><span class="lang" role="group" aria-label="Language"><button data-lang="fr" style="background:none;border:0;font-family:inherit;font-size:11.5px;letter-spacing:.08em;cursor:pointer;padding:2px 7px;color:rgba(255,255,255,.6)">FR</button><button data-lang="en" style="background:none;border:0;font-family:inherit;font-size:11.5px;letter-spacing:.08em;cursor:pointer;padding:2px 7px;color:rgba(255,255,255,.6)">EN</button><button data-lang="zh" style="background:none;border:0;font-family:inherit;font-size:11.5px;letter-spacing:.08em;cursor:pointer;padding:2px 7px;color:rgba(255,255,255,.6)">中文</button></span></div></div>
 
-<header class="mh">
-  <div class="wrap mh-in">
-    <a class="brand" href="index.html"><img class="brand-logo" src="logo-pandora.svg" alt="PANDORA Economics" style="height:40px;width:auto;display:block" /></a>
-    <button class="menu-btn" id="menuBtn" aria-label="Menu">MENU</button>
-    <nav class="nav" id="nav">
-      <a href="index.html">Accueil</a>
-      <a href="publications.html" class="active">Publications</a>
-      <a href="auteur.html">Auteur</a>
-    </nav>
-  </div>
-</header>
+<header class="mh"><div class="wrap mh-in"><a class="brand" href="index.html"><img class="brand-logo" src="logo-pandora.svg" alt="PANDORA Economics" style="height:40px;width:auto;display:block" /></a><button class="menu-btn" id="menuBtn" aria-label="Menu">Menu</button><nav class="nav" id="nav"><a href="index.html" data-i18n="nav_home">Accueil</a><a href="publications.html" data-i18n="nav_pubs">Publications</a><a href="auteur.html" data-i18n="nav_author">Auteur</a></nav></div></header>
 
 <main>
   <section class="phead">
     <div class="wrap">
-      <span class="eyebrow">Archives</span>
-      <h1>Toutes les publications</h1>
-      <p>L'ensemble des Analyses Flash, filtrables par thème et triables par date de parution.</p>
+      <span class="eyebrow" data-i18n="arch_eyebrow">Archives</span>
+      <h1 data-i18n="pubs_h1">Toutes les publications</h1>
+      <p data-i18n="pubs_intro">L'ensemble des Analyses Flash, filtrables par thème et triables par date de parution.</p>
     </div>
   </section>
 
   <div class="toolbar">
     <div class="wrap toolbar-in">
       <div class="chips" id="chips">
-        <button class="chip active" data-f="all">Tous les thèmes</button>
-        <button class="chip" data-f="Politique monétaire">Politique monétaire</button>
-        <button class="chip" data-f="Marchés &amp; taux">Marchés &amp; taux</button>
-        <button class="chip" data-f="Macroéconomie">Macroéconomie</button>
-        <button class="chip" data-f="France">France</button>
+        <button class="chip active" data-f="all" data-i18n="chip_all">Tous les thèmes</button>
+        <button class="chip" data-f="Politique monétaire" data-i18n="theme_pm">Politique monétaire</button>
+        <button class="chip" data-f="Marchés &amp; taux" data-i18n="theme_mt">Marchés &amp; taux</button>
+        <button class="chip" data-f="Macroéconomie" data-i18n="theme_macro">Macroéconomie</button>
+        <button class="chip" data-f="France" data-i18n="theme_fr">France</button>
       </div>
-      <div class="sort" id="sort"><span>Trier par date</span><button id="sortBtn">Plus récentes <span class="ar">↓</span></button></div>
+      <div class="sort" id="sort"><span data-i18n="sort_label">Trier par date</span><button id="sortBtn">Plus récentes <span class="ar">↓</span></button></div>
     </div>
   </div>
 
@@ -136,40 +119,56 @@
       <a class="row" href="#" data-theme="Marchés &amp; taux" data-date="2026-03-19"><span class="meta">N°01<span class="dt">19 MARS 2026</span></span><span><h3>OAT-Bund : lire l'écart de taux</h3><p>Ce que le spread entre dette française et allemande dit du risque perçu sur la signature française.</p></span><span class="tag">Marchés &amp; taux</span></a>
       <a class="row" href="#" data-theme="France" data-date="2026-03-05"><span class="meta">N°00<span class="dt">05 MARS 2026</span></span><span><h3>Pouvoir d'achat : l'illusion nominale</h3><p>Distinguer la hausse des salaires affichée de l'évolution réelle du revenu disponible.</p></span><span class="tag">France</span></a>
     </div>
-    <div class="empty" id="empty">Aucune publication pour ce thème.</div>
+    <div class="empty" id="empty" data-i18n="empty_msg">Aucune publication pour ce thème.</div>
   </section>
 </main>
 
 <footer>
   <div class="wrap foot-top">
-    <div class="foot-col foot-brand"><div class="nm">PANDORA Economics</div><p>Analyse économique indépendante. Macroéconomie, marchés et politiques monétaires.</p></div>
-    <div class="foot-col"><h4>Naviguer</h4><a href="index.html">Accueil</a><a href="publications.html">Publications</a><a href="auteur.html">Auteur</a></div>
-    <div class="foot-col"><h4>Thèmes</h4><a href="publications.html">Politique monétaire</a><a href="publications.html">Marchés &amp; taux</a><a href="publications.html">Macroéconomie</a><a href="publications.html">France</a></div>
-    <div class="foot-col"><h4>Contact</h4><a href="mailto:pandora.economics@outlook.com">Email</a><a href="#">LinkedIn</a><a href="#">X / Twitter</a></div>
+    <div class="foot-col foot-brand"><div class="nm">PANDORA Economics</div><p data-i18n="foot_desc">Analyse économique indépendante. Macroéconomie, marchés et politiques monétaires.</p></div>
+    <div class="foot-col"><h4 data-i18n="foot_navigate">Naviguer</h4><a href="index.html" data-i18n="nav_home">Accueil</a><a href="publications.html" data-i18n="nav_pubs">Publications</a><a href="auteur.html" data-i18n="nav_author">Auteur</a></div>
+    <div class="foot-col"><h4 data-i18n="foot_topics">Thèmes</h4><a href="publications.html?theme=Politique%20mon%C3%A9taire" data-i18n="theme_pm">Politique monétaire</a><a href="publications.html?theme=March%C3%A9s%20%26%20taux" data-i18n="theme_mt">Marchés &amp; taux</a><a href="publications.html?theme=Macro%C3%A9conomie" data-i18n="theme_macro">Macroéconomie</a><a href="publications.html?theme=France" data-i18n="theme_fr">France</a></div>
+    <div class="foot-col"><h4 data-i18n="foot_contact">Contact</h4><a href="mailto:pandora.economics@outlook.com">Email</a><a href="https://www.linkedin.com/company/pandora-economics/?viewAsMember=true" target="_blank" rel="noopener">LinkedIn</a></div>
   </div>
-  <div class="wrap foot-bot"><span>© <span id="year"></span> PANDORA Economics — Lenel Nivose · Tous droits réservés</span><span><a href="mentions-legales.html" style="text-decoration:underline;text-underline-offset:2px">Mentions légales</a> · <a href="confidentialite.html" style="text-decoration:underline;text-underline-offset:2px">Confidentialité</a></span></div>
+  <div class="wrap foot-bot"><span>© <span id="year"></span> PANDORA Economics — Lenel Nivose · <span data-i18n="foot_rights">Tous droits réservés</span></span><span><a href="mentions-legales.html" data-i18n="legal_notice" style="text-decoration:underline;text-underline-offset:2px">Mentions légales</a> · <a href="confidentialite.html" data-i18n="legal_privacy" style="text-decoration:underline;text-underline-offset:2px">Confidentialité</a></span></div>
 </footer>
 
+<script src="i18n.js"></script>
 <script src="publications.js"></script>
 <script>
   document.getElementById('year').textContent=new Date().getFullYear();
-  document.getElementById('menuBtn').addEventListener('click',function(){document.getElementById('nav').classList.toggle('show');});
-  document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.lang button').forEach(function(x){x.setAttribute('aria-pressed',x===b);});});});
+  var mb=document.getElementById('menuBtn'); if(mb) mb.addEventListener('click',function(){document.getElementById('nav').classList.toggle('show');});
 
   var list=document.getElementById('list');
-  if(window.PUBLICATIONS){ list.innerHTML=window.pubsSorted().map(function(p){ return '<a class="row" href="article.html?n='+p.num+'" data-theme="'+p.theme+'" data-date="'+p.date+'">'+'<span class="meta">N°'+p.num+'<span class="dt">'+frDate(p.date,true)+'</span></span>'+'<span><h3>'+p.titre+'</h3><p>'+p.resume+'</p></span>'+'<span class="tag">'+p.theme+'</span></a>'; }).join(''); }
   function rows(){return Array.prototype.slice.call(list.querySelectorAll('.row'));}
   var filter='all', desc=true;
-  function apply(){var v=0;rows().forEach(function(r){var ok=filter==='all'||r.getAttribute('data-theme')===filter;r.classList.toggle('hide',!ok);if(ok)v++;});document.getElementById('empty').style.display=v?'none':'block';}
+  function L(){return window.I18N?I18N.lang:'fr';}
+  function numTag(num){var l=L(); return l==='zh'?'第'+num+'期':(l==='en'?'No. '+num:'N°'+num);}
+  function build(){
+    if(window.PUBLICATIONS){
+      list.innerHTML=window.pubsSorted().map(function(p){
+        return '<a class="row" href="article.html?n='+p.num+'" data-theme="'+p.theme+'" data-date="'+p.date+'">'+
+          '<span class="meta">'+numTag(p.num)+'<span class="dt">'+fmtDate(p.date,L(),true)+'</span></span>'+
+          '<span><h3>'+pubField(p,'titre')+'</h3><p>'+pubField(p,'resume')+'</p></span>'+
+          '<span class="tag">'+I18N.themeLabel(p.theme)+'</span></a>';
+      }).join('');
+    }
+    sortRows(); applyFilter();
+  }
+  function applyFilter(){var v=0;rows().forEach(function(r){var ok=filter==='all'||r.getAttribute('data-theme')===filter;r.classList.toggle('hide',!ok);if(ok)v++;});document.getElementById('empty').style.display=v?'none':'block';}
   function sortRows(){rows().sort(function(a,b){var da=a.getAttribute('data-date'),db=b.getAttribute('data-date');return desc?db.localeCompare(da):da.localeCompare(db);}).forEach(function(r){list.appendChild(r);});}
-  document.getElementById('chips').addEventListener('click',function(e){var c=e.target.closest('.chip');if(!c)return;document.querySelectorAll('.chip').forEach(function(x){x.classList.remove('active');});c.classList.add('active');filter=c.getAttribute('data-f');apply();});
+  function sortLabel(){var t=window.I18N?(desc?I18N.t('sort_recent'):I18N.t('sort_oldest')):(desc?'Plus récentes':'Plus anciennes');sortBtn.firstChild.textContent=t+' ';}
+
+  document.getElementById('chips').addEventListener('click',function(e){var c=e.target.closest('.chip');if(!c)return;document.querySelectorAll('.chip').forEach(function(x){x.classList.remove('active');});c.classList.add('active');filter=c.getAttribute('data-f');applyFilter();});
   var sortBtn=document.getElementById('sortBtn');
-  sortBtn.addEventListener('click',function(){desc=!desc;document.getElementById('sort').classList.toggle('asc',!desc);sortBtn.firstChild.textContent=desc?'Plus récentes ':'Plus anciennes ';sortRows();});
-  (function(){ var qp=new URLSearchParams(location.search).get('theme');
-    if(qp){ var cs=Array.prototype.slice.call(document.querySelectorAll('.chip'));
-      var m=cs.filter(function(c){return c.getAttribute('data-f')===qp;})[0];
-      if(m){ cs.forEach(function(x){x.classList.remove('active');}); m.classList.add('active'); filter=qp; } } })();
-  sortRows();apply();
+  sortBtn.addEventListener('click',function(){desc=!desc;document.getElementById('sort').classList.toggle('asc',!desc);sortLabel();sortRows();});
+
+  if(window.I18N) I18N.apply();
+  (function(){var qp=null;try{qp=new URLSearchParams(location.search).get('theme');}catch(e){}
+    if(qp){var cs=Array.prototype.slice.call(document.querySelectorAll('.chip'));var m=cs.filter(function(c){return c.getAttribute('data-f')===qp;})[0];if(m){cs.forEach(function(x){x.classList.remove('active');});m.classList.add('active');filter=qp;}}})();
+  sortLabel();
+  build();
+  window.addEventListener('langchange', function(){ sortLabel(); build(); });
 </script>
 </body>
 </html>

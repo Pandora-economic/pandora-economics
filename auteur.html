@@ -5,9 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Lenel Nivose — PANDORA Economics</title>
 <meta name="description" content="Lenel Nivose, fondateur et rédacteur de PANDORA Economics, publication d'analyse économique indépendante." />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="fonts.css" />
 <style>
   :root{
     --ink:#14123A; --primary:#211C6B; --primary-2:#322a93; --violet:#5A3DC0; --iris:#8B6FE0;
@@ -85,66 +83,50 @@
 </head>
 <body>
 
-<div class="util">
-  <div class="wrap util-in">
-    <span class="tagline">Publication indépendante d'analyse économique</span>
-    <span class="lang" role="group" aria-label="Langue"><button data-lang="fr" aria-pressed="true">FR</button>·<button data-lang="en" aria-pressed="false">EN</button></span>
-  </div>
-</div>
+<div class="util"><div class="wrap util-in"><span class="tagline" data-i18n="tagline">Publication indépendante d'analyse économique</span><span class="lang" role="group" aria-label="Language"><button data-lang="fr" style="background:none;border:0;font-family:inherit;font-size:11.5px;letter-spacing:.08em;cursor:pointer;padding:2px 7px;color:rgba(255,255,255,.6)">FR</button><button data-lang="en" style="background:none;border:0;font-family:inherit;font-size:11.5px;letter-spacing:.08em;cursor:pointer;padding:2px 7px;color:rgba(255,255,255,.6)">EN</button><button data-lang="zh" style="background:none;border:0;font-family:inherit;font-size:11.5px;letter-spacing:.08em;cursor:pointer;padding:2px 7px;color:rgba(255,255,255,.6)">中文</button></span></div></div>
 
-<header class="mh">
-  <div class="wrap mh-in">
-    <a class="brand" href="index.html"><img class="brand-logo" src="logo-pandora.svg" alt="PANDORA Economics" style="height:40px;width:auto;display:block" /></a>
-    <button class="menu-btn" id="menuBtn" aria-label="Menu">MENU</button>
-    <nav class="nav" id="nav">
-      <a href="index.html">Accueil</a>
-      <a href="publications.html">Publications</a>
-      <a href="auteur.html" class="active">Auteur</a>
-    </nav>
-  </div>
-</header>
+<header class="mh"><div class="wrap mh-in"><a class="brand" href="index.html"><img class="brand-logo" src="logo-pandora.svg" alt="PANDORA Economics" style="height:40px;width:auto;display:block" /></a><button class="menu-btn" id="menuBtn" aria-label="Menu">Menu</button><nav class="nav" id="nav"><a href="index.html" data-i18n="nav_home">Accueil</a><a href="publications.html" data-i18n="nav_pubs">Publications</a><a href="auteur.html" data-i18n="nav_author">Auteur</a></nav></div></header>
 
 <main>
   <section class="wrap ah">
     <div class="portrait" aria-hidden="true">LN</div>
     <div class="who">
-      <span class="eyebrow">L'auteur</span>
+      <span class="eyebrow" data-i18n="author_eyebrow">L'auteur</span>
       <h1>Lenel Nivose</h1>
-      <div class="role">Fondateur &amp; rédacteur — PANDORA Economics</div>
+      <div class="role" data-i18n="author_role">Fondateur &amp; rédacteur — PANDORA Economics</div>
     </div>
   </section>
 
   <section class="wrap narrow bio">
-    <p class="lead">PANDORA Economics est né d'une conviction simple : l'actualité économique mérite d'être expliquée clairement, sans bruit ni effet d'annonce.</p>
-    <p>Chaque Analyse Flash part d'un fait d'actualité — une décision de banque centrale, un mouvement de taux, une statistique d'inflation — et en restitue les mécanismes en quelques minutes de lecture. L'objectif n'est pas de prédire, mais de fournir une grille de lecture solide et documentée, pour comprendre et décider par soi-même.</p>
-    <p class="muted">La ligne éditoriale est indépendante. Pas de parti pris d'école, pas de jargon gratuit : seulement les chiffres qui comptent et le raisonnement qui les relie.</p>
+    <p class="lead" data-i18n="bio_lead">PANDORA Economics est né d'une conviction simple : l'actualité économique mérite d'être expliquée clairement, sans bruit ni effet d'annonce.</p>
+    <p data-i18n="bio_p1">Chaque Analyse Flash part d'un fait d'actualité — une décision de banque centrale, un mouvement de taux, une statistique d'inflation — et en restitue les mécanismes en quelques minutes de lecture. L'objectif n'est pas de prédire, mais de fournir une grille de lecture solide et documentée, pour comprendre et décider par soi-même.</p>
+    <p class="muted" data-i18n="bio_p2">La ligne éditoriale est indépendante. Pas de parti pris d'école, pas de jargon gratuit : seulement les chiffres qui comptent et le raisonnement qui les relie.</p>
 
     <div class="quote">
       <div class="gb" aria-hidden="true"></div>
-      <p>« Comprendre une décision économique, c'est d'abord savoir quelles contraintes pesaient sur celui qui l'a prise. »</p>
-      <div class="by">Lenel Nivose</div>
+      <p data-i18n="quote_text">« Comprendre une décision économique, c'est d'abord savoir quelles contraintes pesaient sur celui qui l'a prise. »</p>
+      <div class="by" data-i18n="quote_by">Lenel Nivose</div>
     </div>
   </section>
 
   <section class="wrap narrow cols">
     <div class="col">
-      <span class="eyebrow">Domaines</span>
-      <h2>Champs d'analyse</h2>
+      <span class="eyebrow" data-i18n="domains_eyebrow">Domaines</span>
+      <h2 data-i18n="domains_title">Champs d'analyse</h2>
       <ul class="exp">
-        <li><svg width="16" height="16" viewBox="0 0 16 16"><path d="M2 8l4 4 8-9" fill="none" stroke="#5A3DC0" stroke-width="1.7"/></svg>Macroéconomie et conjoncture</li>
-        <li><svg width="16" height="16" viewBox="0 0 16 16"><path d="M2 8l4 4 8-9" fill="none" stroke="#5A3DC0" stroke-width="1.7"/></svg>Politiques monétaires (BCE, Fed)</li>
-        <li><svg width="16" height="16" viewBox="0 0 16 16"><path d="M2 8l4 4 8-9" fill="none" stroke="#5A3DC0" stroke-width="1.7"/></svg>Marchés de taux et dette souveraine</li>
-        <li><svg width="16" height="16" viewBox="0 0 16 16"><path d="M2 8l4 4 8-9" fill="none" stroke="#5A3DC0" stroke-width="1.7"/></svg>Économie française et pouvoir d'achat</li>
+        <li><svg width="16" height="16" viewBox="0 0 16 16"><path d="M2 8l4 4 8-9" fill="none" stroke="#5A3DC0" stroke-width="1.7"/></svg><span data-i18n="exp1">Macroéconomie et conjoncture</span></li>
+        <li><svg width="16" height="16" viewBox="0 0 16 16"><path d="M2 8l4 4 8-9" fill="none" stroke="#5A3DC0" stroke-width="1.7"/></svg><span data-i18n="exp2">Politiques monétaires (BCE, Fed)</span></li>
+        <li><svg width="16" height="16" viewBox="0 0 16 16"><path d="M2 8l4 4 8-9" fill="none" stroke="#5A3DC0" stroke-width="1.7"/></svg><span data-i18n="exp3">Marchés de taux et dette souveraine</span></li>
+        <li><svg width="16" height="16" viewBox="0 0 16 16"><path d="M2 8l4 4 8-9" fill="none" stroke="#5A3DC0" stroke-width="1.7"/></svg><span data-i18n="exp4">Économie française et pouvoir d'achat</span></li>
       </ul>
     </div>
     <div class="col">
-      <span class="eyebrow">Contact</span>
-      <h2>Échanger &amp; suivre</h2>
+      <span class="eyebrow" data-i18n="contact_eyebrow">Contact</span>
+      <h2 data-i18n="contact_title">Échanger &amp; suivre</h2>
       <div class="contact">
-        <a href="mailto:pandora.economics@outlook.com"><span>Email</span><span class="lab">Écrire →</span></a>
-        <a href="#"><span>LinkedIn</span><span class="lab">Suivre →</span></a>
-        <a href="#"><span>X / Twitter</span><span class="lab">Suivre →</span></a>
-        <a href="publications.html"><span>Lire les analyses</span><span class="lab">Voir →</span></a>
+        <a href="mailto:pandora.economics@outlook.com"><span>Email</span><span class="lab" data-i18n="c_write">Écrire →</span></a>
+        <a href="https://www.linkedin.com/company/pandora-economics/?viewAsMember=true" target="_blank" rel="noopener"><span>LinkedIn</span><span class="lab" data-i18n="c_follow">Suivre →</span></a>
+        <a href="publications.html"><span data-i18n="c_read">Lire les analyses</span><span class="lab" data-i18n="c_see">Voir →</span></a>
       </div>
     </div>
   </section>
@@ -152,18 +134,19 @@
 
 <footer>
   <div class="wrap foot-top">
-    <div class="foot-col foot-brand"><div class="nm">PANDORA Economics</div><p>Analyse économique indépendante. Macroéconomie, marchés et politiques monétaires.</p></div>
-    <div class="foot-col"><h4>Naviguer</h4><a href="index.html">Accueil</a><a href="publications.html">Publications</a><a href="auteur.html">Auteur</a></div>
-    <div class="foot-col"><h4>Thèmes</h4><a href="publications.html">Politique monétaire</a><a href="publications.html">Marchés &amp; taux</a><a href="publications.html">Macroéconomie</a><a href="publications.html">France</a></div>
-    <div class="foot-col"><h4>Contact</h4><a href="mailto:pandora.economics@outlook.com">Email</a><a href="#">LinkedIn</a><a href="#">X / Twitter</a></div>
+    <div class="foot-col foot-brand"><div class="nm">PANDORA Economics</div><p data-i18n="foot_desc">Analyse économique indépendante. Macroéconomie, marchés et politiques monétaires.</p></div>
+    <div class="foot-col"><h4 data-i18n="foot_navigate">Naviguer</h4><a href="index.html" data-i18n="nav_home">Accueil</a><a href="publications.html" data-i18n="nav_pubs">Publications</a><a href="auteur.html" data-i18n="nav_author">Auteur</a></div>
+    <div class="foot-col"><h4 data-i18n="foot_topics">Thèmes</h4><a href="publications.html?theme=Politique%20mon%C3%A9taire" data-i18n="theme_pm">Politique monétaire</a><a href="publications.html?theme=March%C3%A9s%20%26%20taux" data-i18n="theme_mt">Marchés &amp; taux</a><a href="publications.html?theme=Macro%C3%A9conomie" data-i18n="theme_macro">Macroéconomie</a><a href="publications.html?theme=France" data-i18n="theme_fr">France</a></div>
+    <div class="foot-col"><h4 data-i18n="foot_contact">Contact</h4><a href="mailto:pandora.economics@outlook.com">Email</a><a href="https://www.linkedin.com/company/pandora-economics/?viewAsMember=true" target="_blank" rel="noopener">LinkedIn</a></div>
   </div>
-  <div class="wrap foot-bot"><span>© <span id="year"></span> PANDORA Economics — Lenel Nivose · Tous droits réservés</span><span><a href="mentions-legales.html" style="text-decoration:underline;text-underline-offset:2px">Mentions légales</a> · <a href="confidentialite.html" style="text-decoration:underline;text-underline-offset:2px">Confidentialité</a></span></div>
+  <div class="wrap foot-bot"><span>© <span id="year"></span> PANDORA Economics — Lenel Nivose · <span data-i18n="foot_rights">Tous droits réservés</span></span><span><a href="mentions-legales.html" data-i18n="legal_notice" style="text-decoration:underline;text-underline-offset:2px">Mentions légales</a> · <a href="confidentialite.html" data-i18n="legal_privacy" style="text-decoration:underline;text-underline-offset:2px">Confidentialité</a></span></div>
 </footer>
 
+<script src="i18n.js"></script>
 <script>
   document.getElementById('year').textContent=new Date().getFullYear();
-  document.getElementById('menuBtn').addEventListener('click',function(){document.getElementById('nav').classList.toggle('show');});
-  document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.lang button').forEach(function(x){x.setAttribute('aria-pressed',x===b);});});});
+  var mb=document.getElementById('menuBtn'); if(mb) mb.addEventListener('click',function(){document.getElementById('nav').classList.toggle('show');});
+  if(window.I18N) I18N.apply();
 </script>
 </body>
 </html>

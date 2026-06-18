@@ -6,9 +6,7 @@
 <title>Mentions légales — PANDORA Economics</title>
 <meta name="description" content="Mentions légales de PANDORA Economics." />
 <meta name="robots" content="noindex" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@400;500;600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="fonts.css" />
 <style>
   :root{
     --ink:#14123A; --primary:#211C6B; --primary-2:#322a93; --violet:#5A3DC0; --iris:#8B6FE0;
@@ -69,61 +67,58 @@
 </head>
 <body>
 
-<div class="util"><div class="wrap util-in"><span class="tagline">Publication indépendante d'analyse économique</span><span>FR</span></div></div>
+<div class="util"><div class="wrap util-in"><span class="tagline" data-i18n="tagline">Publication indépendante d'analyse économique</span><span class="lang" role="group" aria-label="Language"><button data-lang="fr" style="background:none;border:0;font-family:inherit;font-size:11.5px;letter-spacing:.08em;cursor:pointer;padding:2px 7px;color:rgba(255,255,255,.6)">FR</button><button data-lang="en" style="background:none;border:0;font-family:inherit;font-size:11.5px;letter-spacing:.08em;cursor:pointer;padding:2px 7px;color:rgba(255,255,255,.6)">EN</button><button data-lang="zh" style="background:none;border:0;font-family:inherit;font-size:11.5px;letter-spacing:.08em;cursor:pointer;padding:2px 7px;color:rgba(255,255,255,.6)">中文</button></span></div></div>
 
-<header class="mh">
-  <div class="wrap mh-in">
-    <a class="brand" href="index.html"><img class="brand-logo" src="logo-pandora.svg" alt="PANDORA Economics" style="height:40px;width:auto;display:block" /></a>
-    <button class="menu-btn" id="menuBtn" aria-label="Menu">MENU</button>
-    <nav class="nav" id="nav"><a href="index.html">Accueil</a><a href="publications.html">Publications</a><a href="auteur.html">Auteur</a></nav>
-  </div>
-</header>
+<header class="mh"><div class="wrap mh-in"><a class="brand" href="index.html"><img class="brand-logo" src="logo-pandora.svg" alt="PANDORA Economics" style="height:40px;width:auto;display:block" /></a><button class="menu-btn" id="menuBtn" aria-label="Menu">Menu</button><nav class="nav" id="nav"><a href="index.html" data-i18n="nav_home">Accueil</a><a href="publications.html" data-i18n="nav_pubs">Publications</a><a href="auteur.html" data-i18n="nav_author">Auteur</a></nav></div></header>
 
 <main>
   <section class="legal-head">
-    <div class="wrap"><span class="eyebrow">Informations</span><h1>Mentions légales</h1><div class="upd">Dernière mise à jour : <span class="ph">[DATE]</span></div></div>
+    <div class="wrap"><span class="eyebrow" data-i18n="ml_eyebrow">Informations</span><h1 data-i18n="ml_h1">Mentions légales</h1><div class="upd"><span data-i18n="legal_updated">Dernière mise à jour :</span> <span class="ph">[DATE]</span></div></div>
   </section>
 
   <section class="legal">
     <div class="wrap doc">
-      <h2>Éditeur du site</h2>
-      <p>Le site PANDORA Economics est édité à titre non professionnel par un particulier, sous le nom de plume <strong>Lenel Nivose</strong>.</p>
-      <p>Contact : <a href="mailto:pandora.economics@outlook.com">pandora.economics@outlook.com</a></p>
-      <p class="note">En tant qu'éditeur non professionnel, et conformément à l'article 6 III 2 de la loi n° 2004-575 du 21 juin 2004 (LCEN), l'éditeur a choisi de ne pas rendre publiques ses coordonnées personnelles. Son identité complète a été communiquée à l'hébergeur du site, qui peut la transmettre sur réquisition judiciaire. Si tu préfères afficher ton identité, remplace ce paragraphe par : Nom et prénom <span class="ph">[À COMPLÉTER]</span>, adresse <span class="ph">[À COMPLÉTER]</span>.</p>
+      <p class="note" data-i18n="legal_fr_only">Ce document est rédigé en français, langue de référence de l'éditeur.</p>
+      <h2 data-i18n="ml_h2_editor">Éditeur du site</h2>
+      <p data-i18n="ml_p_editor">Le site PANDORA Economics est édité à titre non professionnel par un particulier, sous le nom de plume <strong>Lenel Nivose</strong>.</p>
+      <p data-i18n="ml_p_contact1">Contact : <a href="mailto:pandora.economics@outlook.com">pandora.economics@outlook.com</a></p>
+      <p class="note" data-i18n="ml_note_anon">En tant qu'éditeur non professionnel, et conformément à l'article 6 III 2 de la loi n° 2004-575 du 21 juin 2004 (LCEN), l'éditeur a choisi de ne pas rendre publiques ses coordonnées personnelles. Son identité complète a été communiquée à l'hébergeur du site, qui peut la transmettre sur réquisition judiciaire. Si tu préfères afficher ton identité, remplace ce paragraphe par : Nom et prénom <span class="ph">[À COMPLÉTER]</span>, adresse <span class="ph">[À COMPLÉTER]</span>.</p>
 
-      <h2>Directeur de la publication</h2>
-      <p>Lenel Nivose <span class="ph">[nom réel à conserver auprès de l'hébergeur]</span>.</p>
+      <h2 data-i18n="ml_h2_director">Directeur de la publication</h2>
+      <p data-i18n="ml_p_director">Lenel Nivose <span class="ph">[nom réel à conserver auprès de l'hébergeur]</span>.</p>
 
-      <h2>Hébergeur</h2>
-      <p>Le site est hébergé par GitHub Pages :</p>
-      <p>GitHub, Inc.<br />88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis<br /><a href="https://github.com" target="_blank" rel="noopener">github.com</a></p>
+      <h2 data-i18n="ml_h2_host">Hébergeur</h2>
+      <p data-i18n="ml_p_host1">Le site est hébergé par GitHub Pages :</p>
+      <p data-i18n="ml_p_host2">GitHub, Inc.<br />88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis<br /><a href="https://github.com" target="_blank" rel="noopener">github.com</a></p>
 
-      <h2>Propriété intellectuelle</h2>
-      <p>L'ensemble des contenus publiés sur ce site (textes, analyses, documents PDF, éléments graphiques, identité visuelle) est protégé par le droit d'auteur. Toute reproduction ou diffusion, totale ou partielle, sans autorisation préalable de l'éditeur, est interdite.</p>
-      <p>Les citations restent autorisées dans la limite du droit de courte citation, sous réserve de mentionner la source (PANDORA Economics — Lenel Nivose) et d'un lien vers le site.</p>
+      <h2 data-i18n="ml_h2_ip">Propriété intellectuelle</h2>
+      <p data-i18n="ml_p_ip1">L'ensemble des contenus publiés sur ce site (textes, analyses, documents PDF, éléments graphiques, identité visuelle) est protégé par le droit d'auteur. Toute reproduction ou diffusion, totale ou partielle, sans autorisation préalable de l'éditeur, est interdite.</p>
+      <p data-i18n="ml_p_ip2">Les citations restent autorisées dans la limite du droit de courte citation, sous réserve de mentionner la source (PANDORA Economics — Lenel Nivose) et d'un lien vers le site.</p>
 
-      <h2>Responsabilité</h2>
-      <p>Les analyses publiées sur PANDORA Economics ont une vocation strictement informative et ne constituent en aucun cas un conseil en investissement, une recommandation financière ou un démarchage. L'éditeur ne saurait être tenu responsable des décisions prises sur la base de ces contenus. Les liens externes éventuels ne sauraient engager la responsabilité de l'éditeur quant à leur contenu.</p>
+      <h2 data-i18n="ml_h2_resp">Responsabilité</h2>
+      <p data-i18n="ml_p_resp">Les analyses publiées sur PANDORA Economics ont une vocation strictement informative et ne constituent en aucun cas un conseil en investissement, une recommandation financière ou un démarchage. L'éditeur ne saurait être tenu responsable des décisions prises sur la base de ces contenus. Les liens externes éventuels ne sauraient engager la responsabilité de l'éditeur quant à leur contenu.</p>
 
-      <h2>Contact</h2>
-      <p>Pour toute question relative au site ou à ces mentions : <a href="mailto:pandora.economics@outlook.com">pandora.economics@outlook.com</a>.</p>
+      <h2 data-i18n="ml_h2_contact">Contact</h2>
+      <p data-i18n="ml_p_contact2">Pour toute question relative au site ou à ces mentions : <a href="mailto:pandora.economics@outlook.com">pandora.economics@outlook.com</a>.</p>
     </div>
   </section>
 </main>
 
 <footer>
   <div class="wrap foot-top">
-    <div class="foot-col foot-brand"><div class="nm">PANDORA Economics</div><p>Analyse économique indépendante. Macroéconomie, marchés et politiques monétaires.</p></div>
-    <div class="foot-col"><h4>Naviguer</h4><a href="index.html">Accueil</a><a href="publications.html">Publications</a><a href="auteur.html">Auteur</a></div>
-    <div class="foot-col"><h4>Thèmes</h4><a href="publications.html">Politique monétaire</a><a href="publications.html">Marchés &amp; taux</a><a href="publications.html">Macroéconomie</a><a href="publications.html">France</a></div>
-    <div class="foot-col"><h4>Contact</h4><a href="mailto:pandora.economics@outlook.com">Email</a><a href="#">LinkedIn</a><a href="#">X / Twitter</a></div>
+    <div class="foot-col foot-brand"><div class="nm">PANDORA Economics</div><p data-i18n="foot_desc">Analyse économique indépendante. Macroéconomie, marchés et politiques monétaires.</p></div>
+    <div class="foot-col"><h4 data-i18n="foot_navigate">Naviguer</h4><a href="index.html" data-i18n="nav_home">Accueil</a><a href="publications.html" data-i18n="nav_pubs">Publications</a><a href="auteur.html" data-i18n="nav_author">Auteur</a></div>
+    <div class="foot-col"><h4 data-i18n="foot_topics">Thèmes</h4><a href="publications.html?theme=Politique%20mon%C3%A9taire" data-i18n="theme_pm">Politique monétaire</a><a href="publications.html?theme=March%C3%A9s%20%26%20taux" data-i18n="theme_mt">Marchés &amp; taux</a><a href="publications.html?theme=Macro%C3%A9conomie" data-i18n="theme_macro">Macroéconomie</a><a href="publications.html?theme=France" data-i18n="theme_fr">France</a></div>
+    <div class="foot-col"><h4 data-i18n="foot_contact">Contact</h4><a href="mailto:pandora.economics@outlook.com">Email</a><a href="https://www.linkedin.com/company/pandora-economics/?viewAsMember=true" target="_blank" rel="noopener">LinkedIn</a></div>
   </div>
-  <div class="wrap foot-bot"><span>© <span id="year"></span> PANDORA Economics — Lenel Nivose · Tous droits réservés</span><span><a href="mentions-legales.html">Mentions légales</a> · <a href="confidentialite.html">Confidentialité</a></span></div>
+  <div class="wrap foot-bot"><span>© <span id="year"></span> PANDORA Economics — Lenel Nivose · <span data-i18n="foot_rights">Tous droits réservés</span></span><span><a href="mentions-legales.html" data-i18n="legal_notice" style="text-decoration:underline;text-underline-offset:2px">Mentions légales</a> · <a href="confidentialite.html" data-i18n="legal_privacy" style="text-decoration:underline;text-underline-offset:2px">Confidentialité</a></span></div>
 </footer>
 
+<script src="i18n.js"></script>
 <script>
   document.getElementById('year').textContent=new Date().getFullYear();
-  document.getElementById('menuBtn').addEventListener('click',function(){document.getElementById('nav').classList.toggle('show');});
+  var mb=document.getElementById('menuBtn'); if(mb) mb.addEventListener('click',function(){document.getElementById('nav').classList.toggle('show');});
+  if(window.I18N) I18N.apply();
 </script>
 </body>
 </html>

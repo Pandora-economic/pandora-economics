@@ -5,9 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Analyse — PANDORA Economics</title>
 <meta name="description" content="Analyse économique — PANDORA Economics." />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="fonts.css" />
 <style>
   :root{
     --ink:#14123A; --primary:#211C6B; --primary-2:#322a93; --violet:#5A3DC0; --iris:#8B6FE0;
@@ -92,15 +90,9 @@
 </head>
 <body>
 
-<div class="util"><div class="wrap util-in"><span class="tagline">Publication indépendante d'analyse économique</span><span>FR</span></div></div>
+<div class="util"><div class="wrap util-in"><span class="tagline" data-i18n="tagline">Publication indépendante d'analyse économique</span><span class="lang" role="group" aria-label="Language"><button data-lang="fr" style="background:none;border:0;font-family:inherit;font-size:11.5px;letter-spacing:.08em;cursor:pointer;padding:2px 7px;color:rgba(255,255,255,.6)">FR</button><button data-lang="en" style="background:none;border:0;font-family:inherit;font-size:11.5px;letter-spacing:.08em;cursor:pointer;padding:2px 7px;color:rgba(255,255,255,.6)">EN</button><button data-lang="zh" style="background:none;border:0;font-family:inherit;font-size:11.5px;letter-spacing:.08em;cursor:pointer;padding:2px 7px;color:rgba(255,255,255,.6)">中文</button></span></div></div>
 
-<header class="mh">
-  <div class="wrap mh-in">
-    <a class="brand" href="index.html"><img class="brand-logo" src="logo-pandora.svg" alt="PANDORA Economics" style="height:40px;width:auto;display:block" /></a>
-    <button class="menu-btn" id="menuBtn" aria-label="Menu">MENU</button>
-    <nav class="nav" id="nav"><a href="index.html">Accueil</a><a href="publications.html">Publications</a><a href="auteur.html">Auteur</a></nav>
-  </div>
-</header>
+<header class="mh"><div class="wrap mh-in"><a class="brand" href="index.html"><img class="brand-logo" src="logo-pandora.svg" alt="PANDORA Economics" style="height:40px;width:auto;display:block" /></a><button class="menu-btn" id="menuBtn" aria-label="Menu">Menu</button><nav class="nav" id="nav"><a href="index.html" data-i18n="nav_home">Accueil</a><a href="publications.html" data-i18n="nav_pubs">Publications</a><a href="auteur.html" data-i18n="nav_author">Auteur</a></nav></div></header>
 
 <main class="wrap narrow" id="main">
   <!-- contenu injecté par JS ; fallback ci-dessous si les données ne chargent pas -->
@@ -111,78 +103,60 @@
 
 <footer>
   <div class="wrap foot-top">
-    <div class="foot-col foot-brand"><div class="nm">PANDORA Economics</div><p>Analyse économique indépendante. Macroéconomie, marchés et politiques monétaires.</p></div>
-    <div class="foot-col"><h4>Naviguer</h4><a href="index.html">Accueil</a><a href="publications.html">Publications</a><a href="auteur.html">Auteur</a></div>
-    <div class="foot-col"><h4>Thèmes</h4><a href="publications.html">Politique monétaire</a><a href="publications.html">Marchés &amp; taux</a><a href="publications.html">Macroéconomie</a><a href="publications.html">France</a></div>
-    <div class="foot-col"><h4>Contact</h4><a href="mailto:pandora.economics@outlook.com">Email</a><a href="#">LinkedIn</a><a href="#">X / Twitter</a></div>
+    <div class="foot-col foot-brand"><div class="nm">PANDORA Economics</div><p data-i18n="foot_desc">Analyse économique indépendante. Macroéconomie, marchés et politiques monétaires.</p></div>
+    <div class="foot-col"><h4 data-i18n="foot_navigate">Naviguer</h4><a href="index.html" data-i18n="nav_home">Accueil</a><a href="publications.html" data-i18n="nav_pubs">Publications</a><a href="auteur.html" data-i18n="nav_author">Auteur</a></div>
+    <div class="foot-col"><h4 data-i18n="foot_topics">Thèmes</h4><a href="publications.html?theme=Politique%20mon%C3%A9taire" data-i18n="theme_pm">Politique monétaire</a><a href="publications.html?theme=March%C3%A9s%20%26%20taux" data-i18n="theme_mt">Marchés &amp; taux</a><a href="publications.html?theme=Macro%C3%A9conomie" data-i18n="theme_macro">Macroéconomie</a><a href="publications.html?theme=France" data-i18n="theme_fr">France</a></div>
+    <div class="foot-col"><h4 data-i18n="foot_contact">Contact</h4><a href="mailto:pandora.economics@outlook.com">Email</a><a href="https://www.linkedin.com/company/pandora-economics/?viewAsMember=true" target="_blank" rel="noopener">LinkedIn</a></div>
   </div>
-  <div class="wrap foot-bot"><span>© <span id="year"></span> PANDORA Economics — Lenel Nivose · Tous droits réservés</span><span><a href="mentions-legales.html">Mentions légales</a> · <a href="confidentialite.html">Confidentialité</a></span></div>
+  <div class="wrap foot-bot"><span>© <span id="year"></span> PANDORA Economics — Lenel Nivose · <span data-i18n="foot_rights">Tous droits réservés</span></span><span><a href="mentions-legales.html" data-i18n="legal_notice" style="text-decoration:underline;text-underline-offset:2px">Mentions légales</a> · <a href="confidentialite.html" data-i18n="legal_privacy" style="text-decoration:underline;text-underline-offset:2px">Confidentialité</a></span></div>
 </footer>
 
+<script src="i18n.js"></script>
 <script src="publications.js"></script>
 <script>
   document.getElementById('year').textContent=new Date().getFullYear();
-  document.getElementById('menuBtn').addEventListener('click',function(){document.getElementById('nav').classList.toggle('show');});
-
+  var mb=document.getElementById('menuBtn'); if(mb) mb.addEventListener('click',function(){document.getElementById('nav').classList.toggle('show');});
   function esc(t){var d=document.createElement('div');d.textContent=t==null?'':t;return d.innerHTML;}
+  function L(){return window.I18N?I18N.lang:'fr';}
+  function numTag(num){var l=L(); return l==='zh'?'第'+num+'期':(l==='en'?'No. '+num:'N°'+num);}
 
-  (function(){
+  function renderArticle(){
     var main=document.getElementById('main');
-    if(!window.PUBLICATIONS){ 
-      main.innerHTML='<div class="notfound"><h1>Contenu indisponible</h1><p>Ouvre cette page une fois le site en ligne.</p><a class="back" href="publications.html">← Toutes les publications</a></div>';
-      return;
-    }
-    var n=new URLSearchParams(location.search).get('n');
-    var all=window.pubsSorted();
-    var p=null;
-    if(n){ p=all.filter(function(x){return x.num===n;})[0]; }
-    if(!p){ p=all[0]; } // défaut : la plus récente (utile en aperçu sans paramètre)
+    if(!window.PUBLICATIONS||!window.I18N){ main.innerHTML='<div class="notfound"><a class="back" href="publications.html">&larr; Publications</a></div>'; return; }
+    if(!window.PUBLICATIONS){return;}
+    var n=null;try{n=new URLSearchParams(location.search).get('n');}catch(e){}
+    var all=window.pubsSorted(), p=null;
+    if(n){p=all.filter(function(x){return x.num===n;})[0];}
+    if(!p)p=all[0];
+    if(!p){main.innerHTML='<div class="notfound"><h1>'+I18N.t('art_notfound')+'</h1><a class="back" href="publications.html">'+I18N.t('art_back')+'</a></div>';return;}
 
-    if(!p){
-      main.innerHTML='<div class="notfound"><h1>Publication introuvable</h1><a class="back" href="publications.html">← Toutes les publications</a></div>';
-      return;
-    }
-
-    document.title=p.titre+' — PANDORA Economics';
-    var lead=p.intro||p.resume||'';
-
+    document.title=pubField(p,'titre')+' — PANDORA Economics';
+    var lead=pubField(p,'intro')||pubField(p,'resume')||'';
     var cover = p.image
-      ? '<img src="'+esc(p.image)+'" alt="'+esc(p.titre)+'" onerror="this.style.display=\'none\';this.parentNode.querySelector(\'.phn\').style.display=\'block\';this.parentNode.querySelector(\'.gb\').style.display=\'block\';" />'
-        +'<div class="gb" style="display:none"></div><div class="phn" style="display:none">N°'+esc(p.num)+'</div>'
-      : '<div class="gb"></div><div class="phn">N°'+esc(p.num)+'</div><div class="phc">Analyse Flash</div>';
-
-    var related=all.filter(function(x){return x.num!==p.num;});
-    related.sort(function(a,b){
-      var sa=(a.theme===p.theme)?0:1, sb=(b.theme===p.theme)?0:1;
-      if(sa!==sb) return sa-sb;
-      return b.date.localeCompare(a.date);
-    });
-    related=related.slice(0,3);
-    var relHTML=related.map(function(r){
-      return '<a class="rel" href="article.html?n='+encodeURIComponent(r.num)+'"><div class="m">N°'+esc(r.num)+' · '+esc(frDate(r.date,false))+'</div><h4>'+esc(r.titre)+'</h4></a>';
-    }).join('');
+      ? '<img src="'+esc(p.image)+'" alt="'+esc(pubField(p,'titre'))+'" onerror="this.style.display=\'none\';this.parentNode.querySelector(\'.phn\').style.display=\'block\';this.parentNode.querySelector(\'.gb\').style.display=\'block\';" /><div class="gb" style="display:none"></div><div class="phn" style="display:none">N°'+esc(p.num)+'</div>'
+      : '<div class="gb"></div><div class="phn">N°'+esc(p.num)+'</div><div class="phc">'+I18N.t('art_flash')+'</div>';
+    var pdf=window.pubPdf(p);
+    var rel=all.filter(function(x){return x.num!==p.num;});
+    rel.sort(function(a,b){var sa=(a.theme===p.theme)?0:1,sb=(b.theme===p.theme)?0:1;if(sa!==sb)return sa-sb;return b.date.localeCompare(a.date);});
+    rel=rel.slice(0,3);
+    var relHTML=rel.map(function(r){return '<a class="rel" href="article.html?n='+encodeURIComponent(r.num)+'"><div class="m">'+numTag(r.num)+' · '+esc(fmtDate(r.date,L(),false))+'</div><h4>'+esc(pubField(r,'titre'))+'</h4></a>';}).join('');
 
     main.innerHTML=
-      '<a class="back" href="publications.html">← Toutes les publications</a>'+
-      '<div class="art-top">'+
-        '<div class="art-text">'+
-          '<div class="art-tagrow"><span class="art-tag">'+esc(p.theme)+'</span><span class="art-meta">N°'+esc(p.num)+' · '+esc(frDate(p.date,true))+'</span></div>'+
-          '<h1 class="art-title">'+esc(p.titre)+'</h1>'+
-          '<p class="art-lead">'+esc(lead)+'</p>'+
-          '<div class="art-author">Par Lenel Nivose · PANDORA Economics</div>'+
-        '</div>'+
-        '<div class="art-cover">'+cover+'</div>'+
-      '</div>'+
-      '<div class="art-body">'+
-        '<p>'+esc(lead)+'</p>'+
-        '<p>Cette page introduit l\'analyse. Le raisonnement complet, les graphiques et les sources sont disponibles dans le document PDF ci-dessous.</p>'+
-      '</div>'+
-      '<div class="art-cta">'+
-        '<a class="pdfbtn" href="'+esc(p.pdf)+'" target="_blank" rel="noopener">Lire l\'analyse complète (PDF) →</a>'+
-        '<span class="hint">Document au format PDF · ouverture dans un nouvel onglet</span>'+
-      '</div>'+
-      (relHTML ? '<div class="related"><h3>À lire aussi</h3><div class="rel-grid">'+relHTML+'</div></div>' : '');
-  })();
+      '<a class="back" href="publications.html">'+I18N.t('art_back')+'</a>'+
+      '<div class="art-top"><div class="art-text">'+
+        '<div class="art-tagrow"><span class="art-tag">'+esc(I18N.themeLabel(p.theme))+'</span><span class="art-meta">'+numTag(p.num)+' · '+esc(fmtDate(p.date,L(),true))+'</span></div>'+
+        '<h1 class="art-title">'+esc(pubField(p,'titre'))+'</h1>'+
+        '<p class="art-lead">'+esc(lead)+'</p>'+
+        '<div class="art-author">'+I18N.t('art_by')+'</div>'+
+      '</div><div class="art-cover">'+cover+'</div></div>'+
+      '<div class="art-body"><p>'+esc(lead)+'</p><p>'+I18N.t('art_body2')+'</p></div>'+
+      '<div class="art-cta"><a class="pdfbtn" href="'+esc(pdf.url)+'" target="_blank" rel="noopener">'+I18N.t('art_pdf')+'</a><span class="hint">'+(pdf.fallback?I18N.t('art_pdf_fallback'):I18N.t('art_hint'))+'</span></div>'+
+      (relHTML?'<div class="related"><h3>'+I18N.t('art_related')+'</h3><div class="rel-grid">'+relHTML+'</div></div>':'');
+  }
+
+  if(window.I18N) I18N.apply();
+  renderArticle();
+  window.addEventListener('langchange', renderArticle);
 </script>
 </body>
 </html>

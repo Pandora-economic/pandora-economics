@@ -1,0 +1,19 @@
+/* PANDORA Economics — polices auto-hébergées (sous-ensemble latin)
+   Plus aucun chargement externe : aucune donnée transmise à Google. */
+
+/* ---- Spectral (titres) ---- */
+@font-face{font-family:"Spectral";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/spectral-400.ttf") format("truetype");}
+@font-face{font-family:"Spectral";font-style:normal;font-weight:500;font-display:swap;src:url("fonts/spectral-500.ttf") format("truetype");}
+@font-face{font-family:"Spectral";font-style:normal;font-weight:600;font-display:swap;src:url("fonts/spectral-600.ttf") format("truetype");}
+@font-face{font-family:"Spectral";font-style:italic;font-weight:400;font-display:swap;src:url("fonts/spectral-italic-400.ttf") format("truetype");}
+@font-face{font-family:"Spectral";font-style:italic;font-weight:500;font-display:swap;src:url("fonts/spectral-italic-500.ttf") format("truetype");}
+
+/* ---- Inter (texte) ---- */
+@font-face{font-family:"Inter";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/inter-400.ttf") format("truetype");}
+@font-face{font-family:"Inter";font-style:normal;font-weight:500;font-display:swap;src:url("fonts/inter-500.ttf") format("truetype");}
+@font-face{font-family:"Inter";font-style:normal;font-weight:600;font-display:swap;src:url("fonts/inter-600.ttf") format("truetype");}
+@font-face{font-family:"Inter";font-style:normal;font-weight:700;font-display:swap;src:url("fonts/inter-700.ttf") format("truetype");}
+
+/* ---- IBM Plex Mono (étiquettes, dates) ---- */
+@font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/ibmplexmono-400.ttf") format("truetype");}
+@font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:500;font-display:swap;src:url("fonts/ibmplexmono-500.ttf") format("truetype");}
