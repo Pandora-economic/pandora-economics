@@ -87,6 +87,32 @@
   .foot-bot{border-top:1px solid var(--line-dk);padding:20px 0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;font-family:var(--mono);font-size:11.5px;color:rgba(255,255,255,.55);letter-spacing:.04em;}
   .foot-bot a{text-decoration:underline;text-underline-offset:2px;}
 </style>
+<!-- seo:start -->
+<link rel="canonical" href="https://pandora-economic.github.io/Pandora-economic/article.html" />
+<link rel="alternate" hreflang="fr" href="https://pandora-economic.github.io/Pandora-economic/article.html" />
+<link rel="alternate" hreflang="en" href="https://pandora-economic.github.io/Pandora-economic/article.html?lang=en" />
+<link rel="alternate" hreflang="zh" href="https://pandora-economic.github.io/Pandora-economic/article.html?lang=zh" />
+<link rel="alternate" hreflang="x-default" href="https://pandora-economic.github.io/Pandora-economic/article.html" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="PANDORA Economics" />
+<meta property="og:title" content="Analyse — PANDORA Economics" />
+<meta property="og:description" content="Analyse économique — PANDORA Economics." />
+<meta property="og:url" content="https://pandora-economic.github.io/Pandora-economic/article.html" />
+<meta property="og:image" content="https://pandora-economic.github.io/Pandora-economic/assets/og-default.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="fr_FR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Analyse — PANDORA Economics" />
+<meta name="twitter:description" content="Analyse économique — PANDORA Economics." />
+<meta name="twitter:image" content="https://pandora-economic.github.io/Pandora-economic/assets/og-default.png" />
+<link rel="alternate" type="application/rss+xml" title="PANDORA Economics — Publications" href="https://pandora-economic.github.io/Pandora-economic/feed.xml" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+<!-- seo:end -->
 </head>
 <body>
 
@@ -131,6 +157,18 @@
     if(!p){main.innerHTML='<div class="notfound"><h1>'+I18N.t('art_notfound')+'</h1><a class="back" href="publications.html">'+I18N.t('art_back')+'</a></div>';return;}
 
     document.title=pubField(p,'titre')+' — PANDORA Economics';
+    (function(){
+      var BASE='https://pandora-economic.github.io/Pandora-economic/';
+      var url=BASE+'article.html?n='+encodeURIComponent(p.num);
+      var d=(pubField(p,'resume')||'').replace(/\s+/g,' ').trim();
+      function setm(attr,key,val){var el=document.head.querySelector('['+attr+'="'+key+'"]');if(el)el.setAttribute('content',val);}
+      setm('property','og:title',pubField(p,'titre'));
+      setm('property','og:description',d);
+      setm('property','og:url',url);
+      setm('name','twitter:title',pubField(p,'titre'));
+      setm('name','twitter:description',d);
+      var can=document.head.querySelector('link[rel="canonical"]');if(can)can.setAttribute('href',url);
+    })();
     var lead=pubField(p,'intro')||pubField(p,'resume')||'';
     var cover = p.image
       ? '<img src="'+esc(p.image)+'" alt="'+esc(pubField(p,'titre'))+'" onerror="this.style.display=\'none\';this.parentNode.querySelector(\'.phn\').style.display=\'block\';this.parentNode.querySelector(\'.gb\').style.display=\'block\';" /><div class="gb" style="display:none"></div><div class="phn" style="display:none">N°'+esc(p.num)+'</div>'
