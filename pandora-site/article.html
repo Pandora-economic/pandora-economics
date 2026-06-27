@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Analyse — PANDORA Economics</title>
+<meta name="description" content="Analyse économique — PANDORA Economics." />
+<link rel="stylesheet" href="fonts.css" />
+<style>
+  :root{
+    --ink:#14123A; --primary:#211C6B; --primary-2:#322a93; --violet:#5A3DC0; --iris:#8B6FE0;
+    --paper:#FFFFFF; --panel:#F4F3FA; --panel-2:#ECEAF6; --muted:#6A6588; --line:rgba(20,18,58,.13); --line-dk:rgba(255,255,255,.18);
+    --serif:"Spectral",Georgia,serif; --sans:"Inter",system-ui,sans-serif; --mono:"IBM Plex Mono",monospace;
+    --maxw:1180px; --gutter:clamp(20px,5vw,56px);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter);}
+  .narrow{max-width:900px;}
+  .eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--violet);}
+
+  .util{background:var(--primary);color:#fff;font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;}
+  .util-in{display:flex;justify-content:space-between;align-items:center;padding:8px 0;}
+  @media (max-width:620px){ .util .tagline{display:none;} }
+
+  header.mh{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  .mh-in{display:flex;align-items:center;justify-content:space-between;padding:18px 0;gap:18px;}
+  .brand{display:flex;align-items:center;gap:13px;}
+  .brand .logo{width:38px;height:38px;flex:none;}
+  .brand .txt{display:flex;flex-direction:column;line-height:1.05;}
+  .brand .nm{font-family:var(--serif);font-weight:600;font-size:20px;letter-spacing:.01em;}
+  .brand .tg{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:3px;}
+  .nav{display:flex;align-items:center;gap:34px;}
+  .nav a{font-size:15px;font-weight:500;color:var(--ink);padding:6px 0;}
+  .nav a:hover{color:var(--violet);}
+  .menu-btn{display:none;border:0;background:none;cursor:pointer;font-family:var(--mono);font-size:12px;letter-spacing:.1em;}
+  @media (max-width:780px){ .nav{display:none;} .nav.show{display:flex;position:absolute;top:100%;right:var(--gutter);flex-direction:column;gap:16px;background:#fff;padding:20px 24px;border:1px solid var(--line);box-shadow:0 24px 50px -30px rgba(20,18,58,.4);} .menu-btn{display:block;} }
+
+  .back{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;letter-spacing:.05em;color:var(--violet);margin:clamp(28px,4vw,44px) 0 0;}
+  .back:hover{text-decoration:underline;text-underline-offset:2px;}
+
+  .art-top{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,4.5vw,56px);align-items:center;padding:clamp(22px,3vw,34px) 0 clamp(34px,4vw,52px);border-bottom:1px solid var(--line);}
+  @media (max-width:760px){ .art-top{grid-template-columns:1fr;gap:28px;} .art-cover{order:-1;} }
+  .art-tagrow{display:flex;align-items:center;gap:12px;}
+  .art-tag{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:var(--violet);padding:5px 11px;border-radius:4px;}
+  .art-meta{font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;color:var(--muted);}
+  .art-title{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.4vw,50px);line-height:1.08;letter-spacing:-.01em;margin:18px 0 0;}
+  .art-lead{font-family:var(--serif);font-weight:500;font-style:italic;font-size:clamp(18px,2.1vw,22px);line-height:1.5;color:var(--ink);margin:20px 0 0;}
+  .art-author{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:22px;}
+
+  .art-cover{aspect-ratio:4/3;border-radius:8px;overflow:hidden;border:1px solid var(--line);border-top:3px solid var(--violet);background:linear-gradient(150deg,var(--primary-2),var(--ink));position:relative;display:flex;align-items:center;justify-content:center;}
+  .art-cover img{width:100%;height:100%;object-fit:cover;display:block;}
+  .art-cover .gb{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);background-size:30px 30px;}
+  .art-cover .phn{position:relative;font-family:var(--serif);font-weight:700;font-size:clamp(72px,13vw,130px);line-height:1;color:transparent;-webkit-text-stroke:1.6px rgba(255,255,255,.5);letter-spacing:-.03em;}
+  .art-cover .phc{position:absolute;bottom:18px;left:20px;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6);}
+
+  .art-body{padding:clamp(30px,4vw,52px) 0 clamp(24px,3vw,36px);}
+  .art-body p{font-size:17px;line-height:1.78;color:var(--ink);max-width:68ch;margin:0 0 1.1em;}
+  .art-cta{display:flex;flex-wrap:wrap;gap:16px;align-items:center;padding:clamp(26px,3vw,34px) 0 clamp(52px,6vw,84px);border-top:1px solid var(--line);}
+  .pdfbtn{display:inline-flex;align-items:center;gap:10px;background:var(--primary);color:#fff;font-weight:600;font-size:15px;padding:15px 26px;border-radius:8px;transition:background .18s,transform .15s;}
+  .pdfbtn:hover{background:var(--violet);transform:translateY(-1px);}
+  .art-cta .hint{font-family:var(--mono);font-size:11.5px;color:var(--muted);letter-spacing:.03em;}
+
+  .related{border-top:1px solid var(--line);padding:clamp(40px,5vw,64px) 0 clamp(50px,6vw,80px);}
+  .related h3{font-family:var(--serif);font-weight:600;font-size:22px;margin:0 0 22px;}
+  .rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  @media (max-width:760px){ .rel-grid{grid-template-columns:1fr;} }
+  .rel{border:1px solid var(--line);border-radius:8px;padding:20px 22px;transition:border-color .2s,transform .2s;}
+  .rel:hover{border-color:var(--violet);transform:translateY(-2px);}
+  .rel .m{font-family:var(--mono);font-size:11px;color:var(--violet);letter-spacing:.04em;}
+  .rel h4{font-family:var(--serif);font-weight:600;font-size:17px;line-height:1.25;margin:10px 0 0;}
+
+  .notfound{padding:clamp(60px,9vw,120px) 0;text-align:center;}
+  .notfound h1{font-family:var(--serif);font-weight:600;font-size:32px;margin:0 0 12px;}
+  .notfound a{color:var(--violet);text-decoration:underline;text-underline-offset:2px;}
+
+  footer{background:var(--primary);color:#fff;margin-top:0;}
+  .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px;padding:56px 0 44px;}
+  @media (max-width:780px){ .foot-top{grid-template-columns:1fr 1fr;gap:30px;} }
+  .foot-col h4{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--iris);margin:0 0 16px;}
+  .foot-col a{display:block;color:rgba(255,255,255,.78);font-size:14.5px;padding:6px 0;}
+  .foot-col a:hover{color:#fff;}
+  .foot-brand .nm{font-family:var(--serif);font-weight:600;font-size:20px;}
+  .foot-brand p{color:rgba(255,255,255,.6);font-size:14px;max-width:30ch;margin:14px 0 0;}
+  .foot-bot{border-top:1px solid var(--line-dk);padding:20px 0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;font-family:var(--mono);font-size:11.5px;color:rgba(255,255,255,.55);letter-spacing:.04em;}
+  .foot-bot a{text-decoration:underline;text-underline-offset:2px;}
+  .art-nav{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:44px 0 0;}
+  .navlink{border:1px solid var(--line);border-radius:6px;padding:15px 18px;display:flex;flex-direction:column;gap:6px;transition:.16s;}
+  .navlink:hover{border-color:var(--violet);background:var(--panel);}
+  .navlink.next{text-align:right;align-items:flex-end;}
+  .navlink.empty{border:0;background:none;pointer-events:none;}
+  .navlink .nl-k{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--violet);}
+  .navlink .nl-t{font-family:var(--serif);font-size:15.5px;color:var(--ink);line-height:1.25;}
+  .pdf-preview{margin:46px 0 0;}
+  .pdf-preview h3{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--violet);margin:0 0 14px;}
+  .pdf-preview iframe{width:100%;height:82vh;border:1px solid var(--line);border-radius:8px;background:var(--panel);display:block;}
+  @media (max-width:640px){ .art-nav{grid-template-columns:1fr;} .navlink.next{text-align:left;align-items:flex-start;} .pdf-preview iframe{height:68vh;} }
+</style>
+<!-- seo:start -->
+<link rel="canonical" href="https://pandora-economic.github.io/Pandora-economic/article.html" />
+<link rel="alternate" hreflang="fr" href="https://pandora-economic.github.io/Pandora-economic/article.html" />
+<link rel="alternate" hreflang="en" href="https://pandora-economic.github.io/Pandora-economic/article.html?lang=en" />
+<link rel="alternate" hreflang="zh" href="https://pandora-economic.github.io/Pandora-economic/article.html?lang=zh" />
+<link rel="alternate" hreflang="x-default" href="https://pandora-economic.github.io/Pandora-economic/article.html" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="PANDORA Economics" />
+<meta property="og:title" content="Analyse — PANDORA Economics" />
+<meta property="og:description" content="Analyse économique — PANDORA Economics." />
+<meta property="og:url" content="https://pandora-economic.github.io/Pandora-economic/article.html" />
+<meta property="og:image" content="https://pandora-economic.github.io/Pandora-economic/assets/og-default.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="fr_FR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Analyse — PANDORA Economics" />
+<meta name="twitter:description" content="Analyse économique — PANDORA Economics." />
+<meta name="twitter:image" content="https://pandora-economic.github.io/Pandora-economic/assets/og-default.png" />
+<link rel="alternate" type="application/rss+xml" title="PANDORA Economics — Publications" href="https://pandora-economic.github.io/Pandora-economic/feed.xml" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+<!-- seo:end -->
+</head>
+<body>
+
+<div class="util"><div class="wrap util-in"><span class="tagline" data-i18n="tagline">Publication indépendante d'analyse économique</span><span class="lang" role="group" aria-label="Language"><button data-lang="fr" style="background:none;border:0;font-family:inherit;font-size:11.5px;letter-spacing:.08em;cursor:pointer;padding:2px 7px;color:rgba(255,255,255,.6)">FR</button><button data-lang="en" style="background:none;border:0;font-family:inherit;font-size:11.5px;letter-spacing:.08em;cursor:pointer;padding:2px 7px;color:rgba(255,255,255,.6)">EN</button><button data-lang="zh" style="background:none;border:0;font-family:inherit;font-size:11.5px;letter-spacing:.08em;cursor:pointer;padding:2px 7px;color:rgba(255,255,255,.6)">中文</button></span></div></div>
+
+<header class="mh"><div class="wrap mh-in"><a class="brand" href="index.html"><img class="brand-logo" src="logo-pandora.svg" alt="PANDORA Economics" style="height:40px;width:auto;display:block" /></a><button class="menu-btn" id="menuBtn" aria-label="Menu">Menu</button><nav class="nav" id="nav"><a href="index.html" data-i18n="nav_home">Accueil</a><a href="publications.html" data-i18n="nav_pubs">Publications</a><a href="auteur.html" data-i18n="nav_author">Auteur</a></nav></div></header>
+
+<main class="wrap narrow" id="main">
+  <!-- contenu injecté par JS ; fallback ci-dessous si les données ne chargent pas -->
+  <div class="notfound" id="fallback">
+    <a class="back" href="publications.html">← Toutes les publications</a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap foot-top">
+    <div class="foot-col foot-brand"><div class="nm">PANDORA Economics</div><p data-i18n="foot_desc">Analyse économique indépendante. Macroéconomie, marchés et politiques monétaires.</p></div>
+    <div class="foot-col"><h4 data-i18n="foot_navigate">Naviguer</h4><a href="index.html" data-i18n="nav_home">Accueil</a><a href="publications.html" data-i18n="nav_pubs">Publications</a><a href="auteur.html" data-i18n="nav_author">Auteur</a></div>
+    <div class="foot-col"><h4 data-i18n="foot_topics">Thèmes</h4><a href="publications.html?theme=Politique%20mon%C3%A9taire" data-i18n="theme_pm">Politique monétaire</a><a href="publications.html?theme=March%C3%A9s%20%26%20taux" data-i18n="theme_mt">Marchés &amp; taux</a><a href="publications.html?theme=Macro%C3%A9conomie" data-i18n="theme_macro">Macroéconomie</a><a href="publications.html?theme=France" data-i18n="theme_fr">France</a></div>
+    <div class="foot-col"><h4 data-i18n="foot_contact">Contact</h4><a href="mailto:pandora.economics@outlook.com">Email</a><a href="https://www.linkedin.com/company/pandora-economics/?viewAsMember=true" target="_blank" rel="noopener">LinkedIn</a></div>
+  </div>
+  <div class="wrap foot-bot"><span>© <span id="year"></span> PANDORA Economics — Lenel Nivose · <span data-i18n="foot_rights">Tous droits réservés</span></span><span><a href="mentions-legales.html" data-i18n="legal_notice" style="text-decoration:underline;text-underline-offset:2px">Mentions légales</a> · <a href="confidentialite.html" data-i18n="legal_privacy" style="text-decoration:underline;text-underline-offset:2px">Confidentialité</a></span></div>
+</footer>
+
+<script src="i18n.js"></script>
+<script src="publications.js"></script>
+<script>
+  document.getElementById('year').textContent=new Date().getFullYear();
+  var mb=document.getElementById('menuBtn'); if(mb) mb.addEventListener('click',function(){document.getElementById('nav').classList.toggle('show');});
+  function esc(t){var d=document.createElement('div');d.textContent=t==null?'':t;return d.innerHTML;}
+  function L(){return window.I18N?I18N.lang:'fr';}
+  function numTag(num){var l=L(); return l==='zh'?'第'+num+'期':(l==='en'?'No. '+num:'N°'+num);}
+
+  function renderArticle(){
+    var main=document.getElementById('main');
+    if(!window.PUBLICATIONS||!window.I18N){ main.innerHTML='<div class="notfound"><a class="back" href="publications.html">&larr; Publications</a></div>'; return; }
+    if(!window.PUBLICATIONS){return;}
+    var n=null;try{n=new URLSearchParams(location.search).get('n');}catch(e){}
+    var all=window.pubsSorted(), p=null;
+    if(n){p=all.filter(function(x){return x.num===n;})[0];}
+    if(!p)p=all[0];
+    if(!p){main.innerHTML='<div class="notfound"><h1>'+I18N.t('art_notfound')+'</h1><a class="back" href="publications.html">'+I18N.t('art_back')+'</a></div>';return;}
+
+    document.title=pubField(p,'titre')+' — PANDORA Economics';
+    (function(){
+      var BASE='https://pandora-economic.github.io/Pandora-economic/';
+      var url=BASE+'article.html?n='+encodeURIComponent(p.num);
+      var d=(pubField(p,'resume')||'').replace(/\s+/g,' ').trim();
+      function setm(attr,key,val){var el=document.head.querySelector('['+attr+'="'+key+'"]');if(el)el.setAttribute('content',val);}
+      setm('property','og:title',pubField(p,'titre'));
+      setm('property','og:description',d);
+      setm('property','og:url',url);
+      setm('name','twitter:title',pubField(p,'titre'));
+      setm('name','twitter:description',d);
+      var can=document.head.querySelector('link[rel="canonical"]');if(can)can.setAttribute('href',url);
+    })();
+    var lead=pubField(p,'intro')||pubField(p,'resume')||'';
+    var cover = p.image
+      ? '<img src="'+esc(p.image)+'" alt="'+esc(pubField(p,'titre'))+'" onerror="this.style.display=\'none\';this.parentNode.querySelector(\'.phn\').style.display=\'block\';this.parentNode.querySelector(\'.gb\').style.display=\'block\';" /><div class="gb" style="display:none"></div><div class="phn" style="display:none">N°'+esc(p.num)+'</div>'
+      : '<div class="gb"></div><div class="phn">N°'+esc(p.num)+'</div><div class="phc">'+I18N.t('art_flash')+'</div>';
+    var pdf=window.pubPdf(p);
+    var rel=all.filter(function(x){return x.num!==p.num;});
+    rel.sort(function(a,b){var sa=(a.theme===p.theme)?0:1,sb=(b.theme===p.theme)?0:1;if(sa!==sb)return sa-sb;return b.date.localeCompare(a.date);});
+    rel=rel.slice(0,3);
+    var relHTML=rel.map(function(r){return '<a class="rel" href="article.html?n='+encodeURIComponent(r.num)+'"><div class="m">'+numTag(r.num)+' · '+esc(fmtDate(r.date,L(),false))+'</div><h4>'+esc(pubField(r,'titre'))+'</h4></a>';}).join('');
+
+    main.innerHTML=
+      '<a class="back" href="publications.html">'+I18N.t('art_back')+'</a>'+
+      '<div class="art-top"><div class="art-text">'+
+        '<div class="art-tagrow"><span class="art-tag">'+esc(I18N.themeLabel(p.theme))+'</span><span class="art-meta">'+numTag(p.num)+' · '+esc(fmtDate(p.date,L(),true))+'</span></div>'+
+        '<h1 class="art-title">'+esc(pubField(p,'titre'))+'</h1>'+
+        '<p class="art-lead">'+esc(lead)+'</p>'+
+        '<div class="art-author">'+I18N.t('art_by')+'</div>'+
+      '</div><div class="art-cover">'+cover+'</div></div>'+
+      '<div class="art-body"><p>'+esc(lead)+'</p><p>'+I18N.t('art_body2')+'</p></div>'+
+      '<div class="art-cta"><a class="pdfbtn" href="'+esc(pdf.url)+'" target="_blank" rel="noopener">'+I18N.t('art_pdf')+'</a><span class="hint">'+(pdf.fallback?I18N.t('art_pdf_fallback'):I18N.t('art_hint'))+'</span></div>'+
+      (relHTML?'<div class="related"><h3>'+I18N.t('art_related')+'</h3><div class="rel-grid">'+relHTML+'</div></div>':'');
+  }
+
+  if(window.I18N) I18N.apply();
+  renderArticle();
+  window.addEventListener('langchange', renderArticle);
+</script>
+</body>
+</html>

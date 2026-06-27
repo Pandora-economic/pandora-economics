@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Politique de confidentialité — PANDORA Economics</title>
+<meta name="description" content="Politique de confidentialité et protection des données personnelles de PANDORA Economics." />
+<meta name="robots" content="noindex" />
+<link rel="stylesheet" href="fonts.css" />
+<style>
+  :root{
+    --ink:#14123A; --primary:#211C6B; --primary-2:#322a93; --violet:#5A3DC0; --iris:#8B6FE0;
+    --paper:#FFFFFF; --panel:#F4F3FA; --panel-2:#ECEAF6; --muted:#6A6588; --line:rgba(20,18,58,.13); --line-dk:rgba(255,255,255,.18);
+    --serif:"Spectral",Georgia,serif; --sans:"Inter",system-ui,sans-serif; --mono:"IBM Plex Mono",monospace;
+    --maxw:1180px; --gutter:clamp(20px,5vw,56px);
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter);}
+  .eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--violet);}
+
+  .util{background:var(--primary);color:#fff;font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;}
+  .util-in{display:flex;justify-content:space-between;align-items:center;padding:8px 0;}
+  @media (max-width:620px){ .util .tagline{display:none;} }
+
+  header.mh{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  .mh-in{display:flex;align-items:center;justify-content:space-between;padding:18px 0;gap:18px;}
+  .brand{display:flex;align-items:center;gap:13px;}
+  .brand .logo{width:38px;height:38px;flex:none;}
+  .brand .txt{display:flex;flex-direction:column;line-height:1.05;}
+  .brand .nm{font-family:var(--serif);font-weight:600;font-size:20px;letter-spacing:.01em;}
+  .brand .tg{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:3px;}
+  .nav{display:flex;align-items:center;gap:34px;}
+  .nav a{font-size:15px;font-weight:500;color:var(--ink);padding:6px 0;}
+  .nav a:hover{color:var(--violet);}
+  .menu-btn{display:none;border:0;background:none;cursor:pointer;font-family:var(--mono);font-size:12px;letter-spacing:.1em;}
+  @media (max-width:780px){ .nav{display:none;} .nav.show{display:flex;position:absolute;top:100%;right:var(--gutter);flex-direction:column;gap:16px;background:#fff;padding:20px 24px;border:1px solid var(--line);box-shadow:0 24px 50px -30px rgba(20,18,58,.4);} .menu-btn{display:block;} }
+
+  .legal-head{border-bottom:1px solid var(--line);padding:clamp(46px,6vw,80px) 0 clamp(26px,3vw,34px);}
+  .legal-head h1{font-family:var(--serif);font-weight:600;font-size:clamp(32px,4.6vw,52px);margin:14px 0 0;letter-spacing:-.01em;}
+  .legal-head .upd{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:14px;letter-spacing:.04em;}
+  .legal{padding:clamp(34px,4vw,52px) 0 clamp(50px,6vw,80px);}
+  .doc{max-width:760px;}
+  .doc h2{font-family:var(--serif);font-weight:600;font-size:22px;margin:36px 0 12px;letter-spacing:-.005em;}
+  .doc h2:first-of-type{margin-top:0;}
+  .doc p{color:var(--ink);font-size:16px;line-height:1.7;margin:0 0 12px;}
+  .doc p.muted{color:var(--muted);font-size:14.5px;}
+  .doc ul{margin:0 0 12px;padding-left:20px;}
+  .doc li{margin-bottom:7px;line-height:1.65;}
+  .doc a{color:var(--violet);text-decoration:underline;text-underline-offset:2px;}
+  .ph{background:var(--panel-2);border:1px solid var(--line);border-radius:3px;padding:1px 7px;font-family:var(--mono);font-size:13px;color:var(--violet);}
+  .note{background:var(--panel);border-left:3px solid var(--violet);padding:15px 18px;border-radius:0 4px 4px 0;font-size:14.5px;color:var(--muted);margin:0 0 14px;}
+
+  footer{background:var(--primary);color:#fff;margin-top:24px;}
+  .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px;padding:56px 0 44px;}
+  @media (max-width:780px){ .foot-top{grid-template-columns:1fr 1fr;gap:30px;} }
+  .foot-col h4{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--iris);margin:0 0 16px;}
+  .foot-col a{display:block;color:rgba(255,255,255,.78);font-size:14.5px;padding:6px 0;}
+  .foot-col a:hover{color:#fff;}
+  .foot-brand .nm{font-family:var(--serif);font-weight:600;font-size:20px;}
+  .foot-brand p{color:rgba(255,255,255,.6);font-size:14px;max-width:30ch;margin:14px 0 0;}
+  .foot-bot{border-top:1px solid var(--line-dk);padding:20px 0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;font-family:var(--mono);font-size:11.5px;color:rgba(255,255,255,.55);letter-spacing:.04em;}
+  .foot-bot a{text-decoration:underline;text-underline-offset:2px;}
+  .foot-bot a:hover{color:#fff;}
+</style>
+<!-- seo:start -->
+<link rel="canonical" href="https://pandora-economic.github.io/Pandora-economic/confidentialite.html" />
+<link rel="alternate" hreflang="fr" href="https://pandora-economic.github.io/Pandora-economic/confidentialite.html" />
+<link rel="alternate" hreflang="en" href="https://pandora-economic.github.io/Pandora-economic/confidentialite.html?lang=en" />
+<link rel="alternate" hreflang="zh" href="https://pandora-economic.github.io/Pandora-economic/confidentialite.html?lang=zh" />
+<link rel="alternate" hreflang="x-default" href="https://pandora-economic.github.io/Pandora-economic/confidentialite.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="PANDORA Economics" />
+<meta property="og:title" content="Politique de confidentialité — PANDORA Economics" />
+<meta property="og:description" content="Politique de confidentialité et protection des données personnelles de PANDORA Economics." />
+<meta property="og:url" content="https://pandora-economic.github.io/Pandora-economic/confidentialite.html" />
+<meta property="og:image" content="https://pandora-economic.github.io/Pandora-economic/assets/og-default.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="fr_FR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Politique de confidentialité — PANDORA Economics" />
+<meta name="twitter:description" content="Politique de confidentialité et protection des données personnelles de PANDORA Economics." />
+<meta name="twitter:image" content="https://pandora-economic.github.io/Pandora-economic/assets/og-default.png" />
+<link rel="alternate" type="application/rss+xml" title="PANDORA Economics — Publications" href="https://pandora-economic.github.io/Pandora-economic/feed.xml" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+<!-- seo:end -->
+</head>
+<body>
+
+<div class="util"><div class="wrap util-in"><span class="tagline" data-i18n="tagline">Publication indépendante d'analyse économique</span><span class="lang" role="group" aria-label="Language"><button data-lang="fr" style="background:none;border:0;font-family:inherit;font-size:11.5px;letter-spacing:.08em;cursor:pointer;padding:2px 7px;color:rgba(255,255,255,.6)">FR</button><button data-lang="en" style="background:none;border:0;font-family:inherit;font-size:11.5px;letter-spacing:.08em;cursor:pointer;padding:2px 7px;color:rgba(255,255,255,.6)">EN</button><button data-lang="zh" style="background:none;border:0;font-family:inherit;font-size:11.5px;letter-spacing:.08em;cursor:pointer;padding:2px 7px;color:rgba(255,255,255,.6)">中文</button></span></div></div>
+
+<header class="mh"><div class="wrap mh-in"><a class="brand" href="index.html"><img class="brand-logo" src="logo-pandora.svg" alt="PANDORA Economics" style="height:40px;width:auto;display:block" /></a><button class="menu-btn" id="menuBtn" aria-label="Menu">Menu</button><nav class="nav" id="nav"><a href="index.html" data-i18n="nav_home">Accueil</a><a href="publications.html" data-i18n="nav_pubs">Publications</a><a href="auteur.html" data-i18n="nav_author">Auteur</a></nav></div></header>
+
+<main>
+  <section class="legal-head">
+    <div class="wrap"><span class="eyebrow" data-i18n="cf_eyebrow">Protection des données</span><h1 data-i18n="cf_h1">Politique de confidentialité</h1><div class="upd"><span data-i18n="legal_updated">Dernière mise à jour :</span> <span class="ph">[DATE]</span></div></div>
+  </section>
+
+  <section class="legal">
+    <div class="wrap doc">
+      <p class="note" data-i18n="legal_fr_only">Ce document est rédigé en français, langue de référence de l'éditeur.</p>
+      <p data-i18n="cf_intro">La présente politique explique quelles données personnelles sont collectées sur PANDORA Economics, dans quel but, et quels sont tes droits. Elle s'inscrit dans le cadre du Règlement général sur la protection des données (RGPD) et de la loi Informatique et Libertés.</p>
+
+      <h2 data-i18n="cf_h2_controller">Responsable du traitement</h2>
+      <p data-i18n="cf_p_controller">Le responsable du traitement est l'éditeur du site, joignable à l'adresse <a href="mailto:pandora.economics@outlook.com">pandora.economics@outlook.com</a>.</p>
+
+      <h2 data-i18n="cf_h2_data">Données collectées</h2>
+      <p data-i18n="cf_p_data">Le site ne collecte que les données que tu fournis volontairement :</p>
+      <ul>
+        <li data-i18n="cf_li_email"><strong>Adresse email</strong>, lorsque tu t'inscris pour recevoir les Analyses Flash.</li>
+      </ul>
+      <p class="muted" data-i18n="cf_note_data">Aucun compte, aucun profilage, aucune donnée sensible ne sont demandés. L'hébergeur (GitHub) peut, comme tout hébergeur, conserver des journaux techniques de connexion (dont l'adresse IP) à des fins de sécurité et de fonctionnement.</p>
+
+      <h2 data-i18n="cf_h2_purpose">Finalité et base légale</h2>
+      <p data-i18n="cf_p_purpose">Ton adresse email est utilisée uniquement pour t'envoyer les publications de PANDORA Economics. La base légale de ce traitement est ton <strong>consentement</strong> (article 6.1.a du RGPD), donné au moment de l'inscription et retirable à tout moment.</p>
+
+      <h2 data-i18n="cf_h2_retention">Durée de conservation</h2>
+      <p data-i18n="cf_p_retention">Ton adresse email est conservée tant que tu restes abonné. Elle est supprimée dès que tu te désinscris ou que tu en fais la demande.</p>
+
+      <h2 data-i18n="cf_h2_rights">Tes droits</h2>
+      <p data-i18n="cf_p_rights1">Conformément au RGPD, tu disposes des droits suivants sur tes données : accès, rectification, effacement, limitation, opposition, portabilité, et retrait du consentement à tout moment.</p>
+      <p data-i18n="cf_p_rights2">Pour les exercer, écris à <a href="mailto:pandora.economics@outlook.com">pandora.economics@outlook.com</a>. Une réponse te sera apportée dans un délai d'un mois.</p>
+      <p data-i18n="cf_p_rights3">Tu peux également introduire une réclamation auprès de la CNIL : 3 Place de Fontenoy, TSA 80715, 75334 Paris Cedex 07 — <a href="https://www.cnil.fr" target="_blank" rel="noopener">www.cnil.fr</a>.</p>
+
+      <h2 data-i18n="cf_h2_cookies">Cookies et mesure d'audience</h2>
+      <p data-i18n="cf_p_cookies">Le site n'utilise aucun cookie de suivi ni outil de mesure d'audience. Aucune bannière de consentement n'est donc nécessaire.</p>
+
+      <h2 data-i18n="cf_h2_contact">Contact</h2>
+      <p data-i18n="cf_p_contact">Pour toute question relative à tes données personnelles : <a href="mailto:pandora.economics@outlook.com">pandora.economics@outlook.com</a>.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-top">
+    <div class="foot-col foot-brand"><div class="nm">PANDORA Economics</div><p data-i18n="foot_desc">Analyse économique indépendante. Macroéconomie, marchés et politiques monétaires.</p></div>
+    <div class="foot-col"><h4 data-i18n="foot_navigate">Naviguer</h4><a href="index.html" data-i18n="nav_home">Accueil</a><a href="publications.html" data-i18n="nav_pubs">Publications</a><a href="auteur.html" data-i18n="nav_author">Auteur</a></div>
+    <div class="foot-col"><h4 data-i18n="foot_topics">Thèmes</h4><a href="publications.html?theme=Politique%20mon%C3%A9taire" data-i18n="theme_pm">Politique monétaire</a><a href="publications.html?theme=March%C3%A9s%20%26%20taux" data-i18n="theme_mt">Marchés &amp; taux</a><a href="publications.html?theme=Macro%C3%A9conomie" data-i18n="theme_macro">Macroéconomie</a><a href="publications.html?theme=France" data-i18n="theme_fr">France</a></div>
+    <div class="foot-col"><h4 data-i18n="foot_contact">Contact</h4><a href="mailto:pandora.economics@outlook.com">Email</a><a href="https://www.linkedin.com/company/pandora-economics/?viewAsMember=true" target="_blank" rel="noopener">LinkedIn</a></div>
+  </div>
+  <div class="wrap foot-bot"><span>© <span id="year"></span> PANDORA Economics — Lenel Nivose · <span data-i18n="foot_rights">Tous droits réservés</span></span><span><a href="mentions-legales.html" data-i18n="legal_notice" style="text-decoration:underline;text-underline-offset:2px">Mentions légales</a> · <a href="confidentialite.html" data-i18n="legal_privacy" style="text-decoration:underline;text-underline-offset:2px">Confidentialité</a></span></div>
+</footer>
+
+<script src="i18n.js"></script>
+<script>
+  document.getElementById('year').textContent=new Date().getFullYear();
+  var mb=document.getElementById('menuBtn'); if(mb) mb.addEventListener('click',function(){document.getElementById('nav').classList.toggle('show');});
+  if(window.I18N) I18N.apply();
+</script>
+</body>
+</html>

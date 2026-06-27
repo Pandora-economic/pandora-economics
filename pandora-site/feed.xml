@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PANDORA Economics — Publications</title>
+    <link>https://pandora-economic.github.io/Pandora-economic/</link>
+    <atom:link href="https://pandora-economic.github.io/Pandora-economic/feed.xml" rel="self" type="application/rss+xml" />
+    <description>Analyses économiques indépendantes : macroéconomie, marchés, politiques monétaires.</description>
+    <language>fr</language>
+    <lastBuildDate>Mon, 22 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Prix des carburants : un choc mondial plutôt qu'asymétrique</title>
+      <link>https://pandora-economic.github.io/Pandora-economic/article.html?n=02</link>
+      <guid isPermaLink="true">https://pandora-economic.github.io/Pandora-economic/article.html?n=02</guid>
+      <pubDate>Fri, 01 May 2026 00:00:00 +0000</pubDate>
+      <category>Macroéconomie</category>
+      <description>Entre 2024 et 2026, la hausse des prix des carburants apparaît comme un choc largement mondial — touchant aussi les pays producteurs — porté par la composante de marché plus que par la fiscalité.</description>
+    </item>
+    <item>
+      <title>Le marché automobile français entre recomposition et contraintes</title>
+      <link>https://pandora-economic.github.io/Pandora-economic/article.html?n=01</link>
+      <guid isPermaLink="true">https://pandora-economic.github.io/Pandora-economic/article.html?n=01</guid>
+      <pubDate>Wed, 01 Apr 2026 00:00:00 +0000</pubDate>
+      <category>France</category>
+      <description>Dominé par les constructeurs européens, le marché automobile français se recompose sous l'effet de la concurrence asiatique, du coût du crédit et des contraintes de décarbonation.</description>
+    </item>
+  </channel>
+</rss>
