@@ -14,7 +14,7 @@ const today=new Date().toISOString().slice(0,10);
 
 /* ---- RSS ---- */
 let items=pubs.map(p=>{
-  const link=`${BASE}article.html?n=${p.num}`;
+  const link=p.external?p.external:`${BASE}article.html?n=${p.num}`;
   return `    <item>
       <title>${esc(p.titre)}</title>
       <link>${link}</link>
@@ -42,7 +42,7 @@ fs.writeFileSync("feed.xml",rss);
 const pages=["","publications.html","auteur.html","mentions-legales.html","confidentialite.html"];
 function urlEntry(loc,lastmod){
   const sep=loc.includes("?")?"&amp;":"?";
-  const alts=["fr","en","zh"].map(l=>{
+  const alts=["fr","en","zh","ko","ja"].map(l=>{
     const href=l==="fr"?loc:`${loc}${sep}lang=${l}`;
     return `    <xhtml:link rel="alternate" hreflang="${l}" href="${href}" />`;}).join("\n");
   return `  <url>
@@ -52,7 +52,7 @@ ${alts}
     <xhtml:link rel="alternate" hreflang="x-default" href="${loc}" />
   </url>`;}
 let urls=pages.map(p=>urlEntry(BASE+p, today));
-pubs.forEach(p=>urls.push(urlEntry(`${BASE}article.html?n=${p.num}`, p.date)));
+pubs.filter(p=>!p.external).forEach(p=>urls.push(urlEntry(`${BASE}article.html?n=${p.num}`, p.date)));
 const sitemap=`<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${urls.join("\n")}

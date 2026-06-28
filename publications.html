@@ -93,6 +93,8 @@
 <link rel="alternate" hreflang="fr" href="https://pandora-economic.github.io/pandora-economics/publications.html" />
 <link rel="alternate" hreflang="en" href="https://pandora-economic.github.io/pandora-economics/publications.html?lang=en" />
 <link rel="alternate" hreflang="zh" href="https://pandora-economic.github.io/pandora-economics/publications.html?lang=zh" />
+<link rel="alternate" hreflang="ko" href="https://pandora-economic.github.io/pandora-economics/publications.html?lang=ko" />
+<link rel="alternate" hreflang="ja" href="https://pandora-economic.github.io/pandora-economics/publications.html?lang=ja" />
 <link rel="alternate" hreflang="x-default" href="https://pandora-economic.github.io/pandora-economics/publications.html" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="PANDORA Economics" />
@@ -105,6 +107,8 @@
 <meta property="og:locale" content="fr_FR" />
 <meta property="og:locale:alternate" content="en_US" />
 <meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="ja_JP" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Publications — PANDORA Economics" />
 <meta name="twitter:description" content="Toutes les Analyses Flash de PANDORA Economics, filtrables par thème et par date." />
@@ -117,7 +121,7 @@
 </head>
 <body>
 
-<div class="util"><div class="wrap util-in"><span class="tagline" data-i18n="tagline">Publication indépendante d'analyse économique</span><span class="lang" role="group" aria-label="Language"><button data-lang="fr" style="background:none;border:0;font-family:inherit;font-size:11.5px;letter-spacing:.08em;cursor:pointer;padding:2px 7px;color:rgba(255,255,255,.6)">FR</button><button data-lang="en" style="background:none;border:0;font-family:inherit;font-size:11.5px;letter-spacing:.08em;cursor:pointer;padding:2px 7px;color:rgba(255,255,255,.6)">EN</button><button data-lang="zh" style="background:none;border:0;font-family:inherit;font-size:11.5px;letter-spacing:.08em;cursor:pointer;padding:2px 7px;color:rgba(255,255,255,.6)">中文</button></span></div></div>
+<div class="util"><div class="wrap util-in"><span class="tagline" data-i18n="tagline">Publication indépendante d'analyse économique</span><span class="lang" role="group" aria-label="Language"><button data-lang="fr" style="background:none;border:0;font-family:inherit;font-size:11.5px;letter-spacing:.08em;cursor:pointer;padding:2px 7px;color:rgba(255,255,255,.6)">FR</button><button data-lang="en" style="background:none;border:0;font-family:inherit;font-size:11.5px;letter-spacing:.08em;cursor:pointer;padding:2px 7px;color:rgba(255,255,255,.6)">EN</button><button data-lang="zh" style="background:none;border:0;font-family:inherit;font-size:11.5px;letter-spacing:.08em;cursor:pointer;padding:2px 7px;color:rgba(255,255,255,.6)">中文</button><button data-lang="ko" style="background:none;border:0;font-family:inherit;font-size:11.5px;letter-spacing:.08em;cursor:pointer;padding:2px 7px;color:rgba(255,255,255,.6)">한국어</button><button data-lang="ja" style="background:none;border:0;font-family:inherit;font-size:11.5px;letter-spacing:.08em;cursor:pointer;padding:2px 7px;color:rgba(255,255,255,.6)">日本語</button></span></div></div>
 
 <header class="mh"><div class="wrap mh-in"><a class="brand" href="index.html"><img class="brand-logo" src="logo-pandora.svg" alt="PANDORA Economics" style="height:40px;width:auto;display:block" /></a><button class="menu-btn" id="menuBtn" aria-label="Menu">Menu</button><nav class="nav" id="nav"><a href="index.html" data-i18n="nav_home">Accueil</a><a href="publications.html" data-i18n="nav_pubs">Publications</a><a href="auteur.html" data-i18n="nav_author">Auteur</a></nav></div></header>
 
@@ -138,6 +142,7 @@
         <button class="chip" data-f="Marchés &amp; taux" data-i18n="theme_mt">Marchés &amp; taux</button>
         <button class="chip" data-f="Macroéconomie" data-i18n="theme_macro">Macroéconomie</button>
         <button class="chip" data-f="France" data-i18n="theme_fr">France</button>
+        <button class="chip" data-f="Publication scientifique" data-i18n="theme_sci">Publication scientifique</button>
       </div>
       <div class="filters">
         <input id="q" class="search" type="search" data-i18n-ph="search_ph" placeholder="Rechercher…" aria-label="Rechercher" />
@@ -187,9 +192,9 @@
   function esc(s){return (s||'').toString().replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
   function searchStr(p){
     var parts=[p.num,p.theme];
-    [['titre',''],['resume',''],['intro',''],['titre','_en'],['resume','_en'],['intro','_en'],['titre','_zh'],['resume','_zh'],['intro','_zh']]
+    [['titre',''],['resume',''],['intro',''],['titre','_en'],['resume','_en'],['intro','_en'],['titre','_zh'],['resume','_zh'],['intro','_zh'],['titre','_ko'],['resume','_ko'],['intro','_ko'],['titre','_ja'],['resume','_ja'],['intro','_ja']]
       .forEach(function(kk){var v=p[kk[0]+kk[1]];if(v)parts.push(v);});
-    parts=parts.concat(p.tags||[],p.tags_en||[],p.tags_zh||[]);
+    parts=parts.concat(p.tags||[],p.tags_en||[],p.tags_zh||[],p.tags_ko||[],p.tags_ja||[]);
     return parts.join(' ');
   }
   function buildYears(){
@@ -204,8 +209,8 @@
         var tags=p['tags_'+L()]||p.tags||[];
         var kw=tags.length?'<div class="kw">'+tags.map(function(t){return '<span>'+esc(t)+'</span>';}).join('')+'</div>':'';
         var rt=p.minutes?'<span class="rt">≈ '+p.minutes+' '+I18N.t('min_read')+'</span>':'';
-        return '<a class="row" href="article.html?n='+p.num+'" data-theme="'+esc(p.theme)+'" data-date="'+p.date+'" data-year="'+p.date.slice(0,4)+'" data-search="'+esc(searchStr(p).toLowerCase())+'">'+
-          '<span class="meta">'+numTag(p.num)+'<span class="dt">'+fmtDate(p.date,L(),true)+'</span>'+rt+'</span>'+
+        return '<a class="row" href="'+(p.external||("article.html?n="+p.num))+'"'+(p.external?' target="_blank" rel="noopener noreferrer"':'')+' data-theme="'+esc(p.theme)+'" data-date="'+p.date+'" data-year="'+p.date.slice(0,4)+'" data-search="'+esc(searchStr(p).toLowerCase())+'">'+
+          '<span class="meta">'+(p.numLabel||numTag(p.num))+'<span class="dt">'+fmtDate(p.date,L(),true)+'</span>'+rt+'</span>'+
           '<span><h3>'+esc(pubField(p,'titre'))+'</h3><p>'+esc(pubField(p,'resume'))+'</p>'+kw+'</span>'+
           '<span class="tag">'+esc(I18N.themeLabel(p.theme))+'</span></a>';
       }).join('');
