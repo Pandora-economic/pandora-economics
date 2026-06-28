@@ -77,20 +77,29 @@
   .foot-brand .nm{font-family:var(--serif);font-weight:600;font-size:20px;}
   .foot-brand p{color:rgba(255,255,255,.6);font-size:14px;max-width:30ch;margin:14px 0 0;}
   .foot-bot{border-top:1px solid var(--line-dk);padding:20px 0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;font-family:var(--mono);font-size:11.5px;color:rgba(255,255,255,.55);letter-spacing:.04em;}
+  .filters{display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
+  .search{font-family:var(--sans);font-size:13.5px;border:1px solid var(--line);background:#fff;color:var(--ink);padding:8px 13px;border-radius:4px;min-width:210px;}
+  .search::placeholder{color:var(--muted);}
+  .search:focus{outline:none;border-color:var(--violet);}
+  .yearsel{font-family:var(--mono);font-size:12px;border:1px solid var(--line);background:#fff;color:var(--violet);padding:8px 11px;border-radius:4px;cursor:pointer;letter-spacing:.04em;}
+  .yearsel:focus{outline:none;border-color:var(--violet);}
+  .kw{margin-top:11px;display:flex;flex-wrap:wrap;gap:6px;}
+  .kw span{font-family:var(--mono);font-size:10px;letter-spacing:.05em;color:var(--muted);background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:3px 8px;}
+  .row .rt{display:block;margin-top:5px;color:var(--muted);font-weight:400;}
   @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto;} }
 </style>
 <!-- seo:start -->
-<link rel="canonical" href="https://pandora-economic.github.io/Pandora-economic/publications.html" />
-<link rel="alternate" hreflang="fr" href="https://pandora-economic.github.io/Pandora-economic/publications.html" />
-<link rel="alternate" hreflang="en" href="https://pandora-economic.github.io/Pandora-economic/publications.html?lang=en" />
-<link rel="alternate" hreflang="zh" href="https://pandora-economic.github.io/Pandora-economic/publications.html?lang=zh" />
-<link rel="alternate" hreflang="x-default" href="https://pandora-economic.github.io/Pandora-economic/publications.html" />
+<link rel="canonical" href="https://pandora-economic.github.io/pandora-economics/publications.html" />
+<link rel="alternate" hreflang="fr" href="https://pandora-economic.github.io/pandora-economics/publications.html" />
+<link rel="alternate" hreflang="en" href="https://pandora-economic.github.io/pandora-economics/publications.html?lang=en" />
+<link rel="alternate" hreflang="zh" href="https://pandora-economic.github.io/pandora-economics/publications.html?lang=zh" />
+<link rel="alternate" hreflang="x-default" href="https://pandora-economic.github.io/pandora-economics/publications.html" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="PANDORA Economics" />
 <meta property="og:title" content="Publications — PANDORA Economics" />
 <meta property="og:description" content="Toutes les Analyses Flash de PANDORA Economics, filtrables par thème et par date." />
-<meta property="og:url" content="https://pandora-economic.github.io/Pandora-economic/publications.html" />
-<meta property="og:image" content="https://pandora-economic.github.io/Pandora-economic/assets/og-default.png" />
+<meta property="og:url" content="https://pandora-economic.github.io/pandora-economics/publications.html" />
+<meta property="og:image" content="https://pandora-economic.github.io/pandora-economics/assets/og-default.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:locale" content="fr_FR" />
@@ -99,8 +108,8 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Publications — PANDORA Economics" />
 <meta name="twitter:description" content="Toutes les Analyses Flash de PANDORA Economics, filtrables par thème et par date." />
-<meta name="twitter:image" content="https://pandora-economic.github.io/Pandora-economic/assets/og-default.png" />
-<link rel="alternate" type="application/rss+xml" title="PANDORA Economics — Publications" href="https://pandora-economic.github.io/Pandora-economic/feed.xml" />
+<meta name="twitter:image" content="https://pandora-economic.github.io/pandora-economics/assets/og-default.png" />
+<link rel="alternate" type="application/rss+xml" title="PANDORA Economics — Publications" href="https://pandora-economic.github.io/pandora-economics/feed.xml" />
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
 <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
@@ -130,7 +139,11 @@
         <button class="chip" data-f="Macroéconomie" data-i18n="theme_macro">Macroéconomie</button>
         <button class="chip" data-f="France" data-i18n="theme_fr">France</button>
       </div>
-      <div class="sort" id="sort"><span data-i18n="sort_label">Trier par date</span><button id="sortBtn">Plus récentes <span class="ar">↓</span></button></div>
+      <div class="filters">
+        <input id="q" class="search" type="search" data-i18n-ph="search_ph" placeholder="Rechercher…" aria-label="Rechercher" />
+        <select id="yearsel" class="yearsel" aria-label="Année"></select>
+        <div class="sort" id="sort"><span data-i18n="sort_label">Trier par date</span><button id="sortBtn">Plus récentes <span class="ar">↓</span></button></div>
+      </div>
     </div>
   </div>
 
@@ -166,26 +179,57 @@
   var mb=document.getElementById('menuBtn'); if(mb) mb.addEventListener('click',function(){document.getElementById('nav').classList.toggle('show');});
 
   var list=document.getElementById('list');
+  var yearsel=document.getElementById('yearsel');
   function rows(){return Array.prototype.slice.call(list.querySelectorAll('.row'));}
   var filter='all', desc=true;
   function L(){return window.I18N?I18N.lang:'fr';}
   function numTag(num){var l=L(); return l==='zh'?'第'+num+'期':(l==='en'?'No. '+num:'N°'+num);}
+  function esc(s){return (s||'').toString().replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function searchStr(p){
+    var parts=[p.num,p.theme];
+    [['titre',''],['resume',''],['intro',''],['titre','_en'],['resume','_en'],['intro','_en'],['titre','_zh'],['resume','_zh'],['intro','_zh']]
+      .forEach(function(kk){var v=p[kk[0]+kk[1]];if(v)parts.push(v);});
+    parts=parts.concat(p.tags||[],p.tags_en||[],p.tags_zh||[]);
+    return parts.join(' ');
+  }
+  function buildYears(){
+    var ys={};rows().forEach(function(r){ys[r.getAttribute('data-year')]=1;});
+    var years=Object.keys(ys).sort().reverse(), cur=yearsel.value||'all';
+    yearsel.innerHTML='<option value="all">'+I18N.t('year_all')+'</option>'+years.map(function(y){return '<option value="'+y+'">'+y+'</option>';}).join('');
+    yearsel.value=cur;
+  }
   function build(){
     if(window.PUBLICATIONS){
       list.innerHTML=window.pubsSorted().map(function(p){
-        return '<a class="row" href="article.html?n='+p.num+'" data-theme="'+p.theme+'" data-date="'+p.date+'">'+
-          '<span class="meta">'+numTag(p.num)+'<span class="dt">'+fmtDate(p.date,L(),true)+'</span></span>'+
-          '<span><h3>'+pubField(p,'titre')+'</h3><p>'+pubField(p,'resume')+'</p></span>'+
-          '<span class="tag">'+I18N.themeLabel(p.theme)+'</span></a>';
+        var tags=p['tags_'+L()]||p.tags||[];
+        var kw=tags.length?'<div class="kw">'+tags.map(function(t){return '<span>'+esc(t)+'</span>';}).join('')+'</div>':'';
+        var rt=p.minutes?'<span class="rt">≈ '+p.minutes+' '+I18N.t('min_read')+'</span>':'';
+        return '<a class="row" href="article.html?n='+p.num+'" data-theme="'+esc(p.theme)+'" data-date="'+p.date+'" data-year="'+p.date.slice(0,4)+'" data-search="'+esc(searchStr(p).toLowerCase())+'">'+
+          '<span class="meta">'+numTag(p.num)+'<span class="dt">'+fmtDate(p.date,L(),true)+'</span>'+rt+'</span>'+
+          '<span><h3>'+esc(pubField(p,'titre'))+'</h3><p>'+esc(pubField(p,'resume'))+'</p>'+kw+'</span>'+
+          '<span class="tag">'+esc(I18N.themeLabel(p.theme))+'</span></a>';
       }).join('');
+      buildYears();
     }
-    sortRows(); applyFilter();
+    sortRows(); apply();
   }
-  function applyFilter(){var v=0;rows().forEach(function(r){var ok=filter==='all'||r.getAttribute('data-theme')===filter;r.classList.toggle('hide',!ok);if(ok)v++;});document.getElementById('empty').style.display=v?'none':'block';}
+  function norm(s){return (s||'').toString().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');}
+  function apply(){
+    var q=norm(document.getElementById('q').value), y=yearsel.value, v=0;
+    rows().forEach(function(r){
+      var okT=filter==='all'||r.getAttribute('data-theme')===filter;
+      var okY=(!y||y==='all')||r.getAttribute('data-year')===y;
+      var okQ=!q||norm(r.getAttribute('data-search')).indexOf(q)>=0;
+      var ok=okT&&okY&&okQ; r.classList.toggle('hide',!ok); if(ok)v++;
+    });
+    document.getElementById('empty').style.display=v?'none':'block';
+  }
   function sortRows(){rows().sort(function(a,b){var da=a.getAttribute('data-date'),db=b.getAttribute('data-date');return desc?db.localeCompare(da):da.localeCompare(db);}).forEach(function(r){list.appendChild(r);});}
   function sortLabel(){var t=window.I18N?(desc?I18N.t('sort_recent'):I18N.t('sort_oldest')):(desc?'Plus récentes':'Plus anciennes');sortBtn.firstChild.textContent=t+' ';}
 
-  document.getElementById('chips').addEventListener('click',function(e){var c=e.target.closest('.chip');if(!c)return;document.querySelectorAll('.chip').forEach(function(x){x.classList.remove('active');});c.classList.add('active');filter=c.getAttribute('data-f');applyFilter();});
+  document.getElementById('chips').addEventListener('click',function(e){var c=e.target.closest('.chip');if(!c)return;document.querySelectorAll('.chip').forEach(function(x){x.classList.remove('active');});c.classList.add('active');filter=c.getAttribute('data-f');apply();});
+  document.getElementById('q').addEventListener('input',apply);
+  yearsel.addEventListener('change',apply);
   var sortBtn=document.getElementById('sortBtn');
   sortBtn.addEventListener('click',function(){desc=!desc;document.getElementById('sort').classList.toggle('asc',!desc);sortLabel();sortRows();});
 

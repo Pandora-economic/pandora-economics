@@ -1,7 +1,7 @@
 /* Génère feed.xml (RSS 2.0), sitemap.xml (avec hreflang) et robots.txt
    à partir de publications.js. Lancer :  node generate-feed.js            */
 const fs=require("fs");
-const BASE="https://pandora-economic.github.io/Pandora-economic/";
+const BASE="https://pandora-economic.github.io/pandora-economics/";
 global.window={};
 eval(fs.readFileSync("publications.js","utf8"));
 const pubs=window.pubsSorted ? window.pubsSorted() : (window.PUBLICATIONS||[]);

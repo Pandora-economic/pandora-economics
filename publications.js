@@ -10,7 +10,10 @@
      "Politique monétaire" · "Marchés & taux" · "Macroéconomie" · "France"
    ===================================================================== */
 window.PUBLICATIONS = [
-  { num:"02", date:"2026-05-01", theme:"Macroéconomie",
+  { num:"02", date:"2026-05-01", theme:"Macroéconomie", minutes:11,
+    tags:["Carburants","Énergie","Fiscalité","Diff. en différences","International"],
+    tags_en:["Fuel","Energy","Taxation","Diff-in-diff","International"],
+    tags_zh:["燃油","能源","税收","双重差分","国际"],
     titre:"Prix des carburants : un choc mondial plutôt qu'asymétrique",
     titre_en:"Fuel prices: a global rather than an asymmetric shock",
     titre_zh:"燃油价格：一场全球性而非不对称的冲击",
@@ -21,7 +24,10 @@ window.PUBLICATIONS = [
     intro_en:"Between 2024 and 2026, fuel prices rose sharply from early 2026, affecting the whole panel, including hydrocarbon-producing countries. The analysis points to an essentially global shock rather than an asymmetric effect hitting only importers, driven more by the pre-tax (market, refining) component than by taxation. A difference-in-differences analysis finds no statistically significant differential effect of the Hormuz shock between importers and exporters.",
     intro_zh:"2024年至2026年间，燃油价格自2026年初起大幅上涨，波及整个样本国家，包括油气生产国。分析表明这主要是一场全球性冲击，而非仅冲击进口国的不对称效应，其驱动更多来自税前（市场、炼化）部分而非税收。双重差分分析未发现霍尔木兹冲击在进口国与出口国之间存在具有统计显著性的差异效应。",
     pdf:"pdfs/analyse-02.pdf", pdf_en:"pdfs/analyse-02-en.pdf", pdf_zh:"pdfs/analyse-02-zh.pdf", pdf_ko:"pdfs/analyse-02-ko.pdf", pdf_ja:"pdfs/analyse-02-ja.pdf" },
-  { num:"01", date:"2026-04-01", theme:"France",
+  { num:"01", date:"2026-04-01", theme:"France", minutes:4,
+    tags:["Automobile","Europe","Parts de marché","CCFA"],
+    tags_en:["Automotive","Europe","Market share","CCFA"],
+    tags_zh:["汽车","欧洲","市场份额","CCFA"],
     titre:"Le marché automobile français entre recomposition et contraintes",
     titre_en:"The French car market between recomposition and constraints",
     titre_zh:"法国汽车市场：重构与制约之间",
